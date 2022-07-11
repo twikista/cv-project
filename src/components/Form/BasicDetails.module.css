@@ -1,0 +1,24 @@
+.basicDetails{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 0.25rem ;
+    font-size: 2rem;
+    /* border: 1px solid hsl(249, 10%, 26%); */
+    /* box-shadow: 5px 2px 2px 2px rgba(0, 0,0, 0.3); */
+}
+
+.heading{
+    background-color: #0e172c;
+    
+}
+
+.wrapper{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    /* background-color: #e2daeb; */
+    border-radius: 0.8rem;
+    border:0.2rem solid #0e172c;
+}
+
+

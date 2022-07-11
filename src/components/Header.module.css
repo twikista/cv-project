@@ -1,0 +1,17 @@
+.header{
+    width: 100%;
+    padding: 20px 10px;
+    background-color: #0e172c;
+}
+
+.logoWrapper{
+    width: inherit;
+    text-align: center;
+}
+
+.logo{
+    text-transform: capitalize;
+    color: #d9d4e7;
+    
+
+}
