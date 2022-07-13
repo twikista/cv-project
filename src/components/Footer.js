@@ -1,18 +1,26 @@
 import React, { Component } from "react";
+import styles from "./Footer.module.css";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 class Footer extends Component {
   render() {
     return (
-      <footer>
-        <div className="legal">
-          <span className="copyright">&copy; 2022 </span>
-          <span>Aaaron Anama</span>
-        </div>
-        <div className="socials">
+      <footer className={styles.footer}>
+        <div className={styles.socials}>
           <ul>
-            <li>Twitter</li>
-            <li>GitHub</li>
-            <li>LinkedIn</li>
+            <li>
+              <FaGithub />
+            </li>
+            <li>
+              <FaLinkedin />
+            </li>
+            <li>
+              <FaTwitter />
+            </li>
           </ul>
+        </div>
+        <div className={styles.legal}>
+          <span>Coded by Aaron Anama</span>
+          <span className="copyright">&copy; 2022 </span>
         </div>
       </footer>
     );

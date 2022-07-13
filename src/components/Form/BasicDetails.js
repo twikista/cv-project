@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./BasicDetails.module.css";
+import FormContent from "../layout/FormContent";
 
 class BasicDetails extends Component {
   onChangeHandler = (field) => (e) => {
@@ -11,50 +11,52 @@ class BasicDetails extends Component {
   render() {
     const { firstName, lastName, email, phone } = this.props.value;
     return (
-      <div className="inputs">
-        <div className="inputs">
-          <label htmlFor="firstname" style={{ display: "block" }}>
-            <input
-              type="text"
-              firstname="firstname"
-              id="firstname"
-              placeholder="First Name"
-              value={firstName}
-              onChange={this.onChangeHandler("firstName")}
-            />
-          </label>
-          <label htmlFor="lastname" style={{ display: "block" }}>
-            <input
-              type="text"
-              firstname="lastname"
-              id="lastname"
-              placeholder="Last Name"
-              value={lastName}
-              onChange={this.onChangeHandler("lastName")}
-            />
-          </label>
-          <label htmlFor="email" style={{ display: "block" }}>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              value={email}
-              onChange={this.onChangeHandler("email")}
-            />
-          </label>
-          <label htmlFor="phone" style={{ display: "block" }}>
-            <input
-              type="tel"
-              name="phone"
-              id="phone"
-              placeholder="Phone Number"
-              value={phone}
-              onChange={this.onChangeHandler("phone")}
-            />
-          </label>
-        </div>
-      </div>
+      <FormContent>
+        <label htmlFor="firstname" style={{ display: "block" }}>
+          <input
+            type="text"
+            className="firstname"
+            id="firstname"
+            placeholder="First Name"
+            value={firstName}
+            onChange={this.onChangeHandler("firstName")}
+            autoComplete="off"
+          />
+        </label>
+        <label htmlFor="lastname" style={{ display: "block" }}>
+          <input
+            type="text"
+            className="lastname"
+            id="lastname"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={this.onChangeHandler("lastName")}
+            autoComplete="off"
+          />
+        </label>
+        <label htmlFor="email" style={{ display: "block" }}>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            value={email}
+            onChange={this.onChangeHandler("email")}
+            autoComplete="off"
+          />
+        </label>
+        <label htmlFor="phone" style={{ display: "block" }}>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            placeholder="Phone Number"
+            value={phone}
+            onChange={this.onChangeHandler("phone")}
+            autoComplete="off"
+          />
+        </label>
+      </FormContent>
     );
   }
 }

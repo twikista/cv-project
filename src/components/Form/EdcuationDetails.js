@@ -1,20 +1,19 @@
 import React, { Component } from "react";
+import FormContent from "../layout/FormContent";
 
 class Education extends Component {
-  onFieldChange = (field) => (e, value, selectedKey) => {
-    const data = { ...this.props.value };
-    console.log(field);
-    data[field] = e.target.value;
-    this.props.onChange(e, data);
-    console.log(data);
+  handler = (index) => (e, val) => {
+    const { name, value } = e.target;
+    const data = [...this.props.value];
+    data[index][name] = value;
+    this.props.handler(e, data);
   };
 
   render() {
     const { school, qualification, period } = this.props.value;
-    console.log(school);
     return (
-      <div className="formcontrolwrappers">
-        <label htmlFor="school">
+      <FormContent>
+        <label htmlFor="school" style={{ display: "block" }}>
           <input
             type="text"
             name="school"
@@ -24,7 +23,7 @@ class Education extends Component {
             onChange={this.onFieldChange("school")}
           />
         </label>
-        <label htmlFor="qualification">
+        <label htmlFor="qualification" style={{ display: "block" }}>
           <input
             type="text"
             name="qualification"
@@ -34,7 +33,7 @@ class Education extends Component {
             onChange={this.onFieldChange("qualification")}
           />
         </label>
-        <label htmlFor="period">
+        <label htmlFor="period" style={{ display: "block" }}>
           <input
             type="text"
             name="period"
@@ -44,7 +43,7 @@ class Education extends Component {
             onChange={this.onFieldChange("period")}
           />
         </label>
-      </div>
+      </FormContent>
     );
   }
 }

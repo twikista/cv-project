@@ -6,6 +6,8 @@ import FormFooter from "./FormFooter";
 import styles from "./Form.module.css";
 import uniqid from "uniqid";
 import FormHeader from "./FormHeader";
+import { BiUser } from "react-icons/bi";
+import { TbSchool } from "react-icons/tb";
 
 class Form extends Component {
   initialState = {
@@ -87,17 +89,17 @@ class Form extends Component {
   };
 
   resetFormHandler = () => {
-    const data = { ...this.stata };
+    let data = { ...this.stata };
     data = this.initialState;
     this.setState(data);
   };
 
   next = () => {
-    this.state((prevState) => ({ step: prevState.step + 1 }));
+    this.setState((prevState) => ({ step: prevState.step + 1 }));
   };
 
   previous = () => {
-    this.state((prevState) => ({ step: prevState.step - 1 }));
+    this.setState((prevState) => ({ step: prevState.step - 1 }));
   };
 
   render() {
@@ -106,7 +108,9 @@ class Form extends Component {
     if (step === 1) {
       contentToRender = (
         <>
-          <FormHeader heading="Basic Details" />
+          <FormHeader heading="Basic Details">
+            <BiUser size="1.3rem" style={{ marginRight: "0.5rem" }} />
+          </FormHeader>
           <BasicDetails
             value={this.state.basicDetails}
             handler={this.onChangeHandler("basicDetails")}
@@ -115,14 +119,16 @@ class Form extends Component {
             step={this.state.step}
             next={this.next}
             previous={this.previous}
-            resetHandler={this.resetHandler}
+            resetHandler={this.resetFormHandler}
           />
         </>
       );
     } else if (step === 2) {
       contentToRender = (
         <>
-          <FormHeader heading="Education Details" />
+          <FormHeader heading="Education Details">
+            <TbSchool size="1.3rem" style={{ marginRight: "0.5rem" }} />
+          </FormHeader>
           <div className="wrapper">
             <EducationDetails
               value={this.state.education}
@@ -134,7 +140,7 @@ class Form extends Component {
               step={this.state.step}
               next={this.next}
               previous={this.previous}
-              resetHandler={this.resetHandler}
+              resetHandler={this.resetFormHandler}
             />
           </div>
         </>
@@ -154,7 +160,7 @@ class Form extends Component {
               step={this.state.step}
               next={this.next}
               previous={this.previous}
-              resetHandler={this.resetHandler}
+              resetHandler={this.resetFormHandler}
             />
           </div>
         </>

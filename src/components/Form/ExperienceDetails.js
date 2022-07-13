@@ -11,14 +11,7 @@ class ExperienceInfo extends Component {
     console.log(this.props);
   };
 
-  // changehandler =(e, index)=>{
-  //   this.props.onChangeHandler(e, index)
-  // }
   render() {
-    // const { educationList } = this.state;
-    // console.log(educationList);
-    // console.log(this.state.educationList);
-    console.log(this.props.value[0]);
     return (
       <div className="experience">
         <h2>Experience Detail</h2>

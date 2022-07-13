@@ -1,11 +1,13 @@
 .form{
-    width: 85%;
-    margin: 2rem auto;
+    /* width: 85%; */
+    /* margin: 2rem auto; */
     /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
     /* background-color: #e2daeb; */
     border-radius: 0.3rem;
-    border:0.2rem solid #0e172c;
+    border:0.2rem solid #1b2945;
     overflow: hidden;
+    padding-bottom: 0.5rem;
+    max-width: 480px;
 
 }
 
