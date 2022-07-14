@@ -164,6 +164,9 @@ class Form extends Component {
             next={this.next}
             previous={this.previous}
             resetHandler={this.resetFormHandler}
+            appDataStoreHandler={() =>
+              this.props.appDataStoreHandler(this.state)
+            }
           />
         </>
       );

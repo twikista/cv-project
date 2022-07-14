@@ -5,8 +5,8 @@ import Form from "../components/Form/Form";
 class Main extends Component {
   render() {
     return (
-      <main>
-        <Form />
+      <main className={styles.mainContentWrapper}>
+        <Form appDataStoreHandler={this.props.appDataStoreHandler} />
       </main>
     );
   }

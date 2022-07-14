@@ -9,7 +9,10 @@ class FormFooter extends Component {
       <div className={styles.formfooter}>
         <div className="resetform">
           {step === 3 && (
-            <button className={`${styles.submitbtn} ${styles.btn}`}>
+            <button
+              className={`${styles.submitbtn} ${styles.btn}`}
+              onClick={this.props.appDataStoreHandler}
+            >
               Submit
             </button>
           )}
