@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FormContent from "../layout/FormContent";
+import AddFormItemBtn from "./AddFormItemBtn";
 
 class ExperienceInfo extends Component {
   handler = (index) => (e, value) => {
@@ -57,13 +58,11 @@ class ExperienceInfo extends Component {
             />
           </article>
         ))}
-        {this.props.value.length < 4 && (
-          <div className="addbtnwrapper">
-            <button onClick={() => this.props.addFormItemHandler("experience")}>
-              + Add Experience details
-            </button>
-          </div>
-        )}
+        <AddFormItemBtn
+          value={this.props.value}
+          addFormItemHandler={this.props.addFormItemHandler}
+          text="Add Education Details"
+        />
       </FormContent>
     );
   }

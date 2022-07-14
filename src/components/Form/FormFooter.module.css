@@ -17,6 +17,12 @@ nav{
     justify-content: space-between;
 }
 
+.single{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn{
     background-color: #1b2d45;
     color: #d9d4e7;
@@ -40,16 +46,17 @@ nav{
   .btn:hover{
     background-color: #008080;
     
+    
   }
 
 
-.resetbtn{
+.resetbtn, .nextbtnfull, .prevbtnfull, .submitbtn{
     width: 100%;
     margin-bottom: 0.5rem;
     
 }
 
-.resetbtn, .submitbtn{
+.resetbtn, .submitbtn, .nextbtnfull, .prevbtnfull{
     
     padding: 0.6rem 0.8rem;
 }
@@ -61,28 +68,23 @@ nav{
     
 }
 
-.prevbtn svg, .nextbtn svg{
+.prevbtn svg, .nextbtn svg, .nextbtnfull svg{
     transition:  transform 0.4s ease;
 
 }
 
-.prevbtn:hover svg{
+.prevbtn:hover svg, .prevbtnfull:hover svg{
     transform: translateX(-5px)
 }
 
-.nextbtn:hover svg{
+.nextbtn:hover svg, .nextbtnfull:hover svg{
     transform: translateX(5px)
 }
 
 
-.submitbtn{
-    width:48%
-}
 
-.single{
-    display: flex;
-    justify-content: flex-end;
-}
+
+
 
 
 /* button{

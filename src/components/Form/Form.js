@@ -8,6 +8,7 @@ import uniqid from "uniqid";
 import FormHeader from "./FormHeader";
 import { BiUser } from "react-icons/bi";
 import { TbSchool } from "react-icons/tb";
+import { MdOutlineWorkOutline } from "react-icons/md";
 
 class Form extends Component {
   initialState = {
@@ -146,7 +147,12 @@ class Form extends Component {
     } else if (step === 3) {
       contentToRender = (
         <>
-          <FormHeader heading="Experience Details" />
+          <FormHeader heading="Experience Details">
+            <MdOutlineWorkOutline
+              size="1.3rem"
+              style={{ marginRight: "0.5rem" }}
+            />
+          </FormHeader>
           <ExperienceDetails
             value={this.state.experience}
             handler={this.onChangeHandler("experience")}

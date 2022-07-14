@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FormContent from "../layout/FormContent";
-import styles from "./EducationalDetails.module.css";
+import AddFormItemBtn from "./AddFormItemBtn";
 
 class Education extends Component {
   handler = (index) => (e, val) => {
@@ -56,16 +56,11 @@ class Education extends Component {
             />
           </article>
         ))}
-        {this.props.value.length < 4 && (
-          <div className={styles.addbtnwrapper}>
-            <button
-              className={styles.addEducationBtn}
-              onClick={() => this.props.addFormItemHandler("education")}
-            >
-              + Add Education details
-            </button>
-          </div>
-        )}
+        <AddFormItemBtn
+          value={this.props.value}
+          addFormItemHandler={this.props.addFormItemHandler}
+          text="Add Education Details"
+        />
       </FormContent>
     );
   }

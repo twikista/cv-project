@@ -8,6 +8,11 @@ class FormFooter extends Component {
     return (
       <div className={styles.formfooter}>
         <div className="resetform">
+          {step === 3 && (
+            <button className={`${styles.submitbtn} ${styles.btn}`}>
+              Submit
+            </button>
+          )}
           <button
             className={`${styles.resetbtn} ${styles.btn}`}
             onClick={resetHandler}
@@ -15,27 +20,33 @@ class FormFooter extends Component {
             Reset
           </button>
         </div>
-        <nav className={this.props.step < 2 ? styles.single : styles.double}>
+        <nav
+          className={
+            this.props.step === 1 || this.props.step > 2
+              ? styles.single
+              : styles.double
+          }
+        >
           {step > 1 && (
             <button
-              className={`${styles.prevbtn} ${styles.btn}`}
+              className={`${
+                this.props.step > 2 ? styles.prevbtnfull : styles.prevbtn
+              } ${styles.btn}`}
               onClick={previous}
             >
               <FaChevronLeft style={{ fontSize: "16px" }} />
             </button>
           )}
-          {step < 3 ? (
+          {step <= 2 && (
             <button
               className={`
-                ${this.props.step < 2 ? styles.nextbtn : styles.nextbtn} ${
+                ${this.props.step < 2 ? styles.nextbtnfull : styles.nextbtn} ${
                 styles.btn
               } `}
               onClick={next}
             >
               <FaChevronRight style={{ fontSize: "16px" }} />
             </button>
-          ) : (
-            <button className={styles.submitbtn}>Submit</button>
           )}
         </nav>
       </div>
