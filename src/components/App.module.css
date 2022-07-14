@@ -4,4 +4,5 @@
     grid-template-rows: auto 1fr auto;
     height: 100vh;
     align-items: center;
+    justify-content: center;
 }

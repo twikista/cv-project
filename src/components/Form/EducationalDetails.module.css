@@ -1,0 +1,18 @@
+.addbtnwrapper{
+    width: 100%;
+}
+
+.addEducationBtn{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    margin-top: 5px;
+    color: #008080;
+    width: inherit;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.addEducationBtn:hover{
+    font-weight: 700;
+}

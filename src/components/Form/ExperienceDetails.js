@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-
-import uniqid from "uniqid";
+import FormContent from "../layout/FormContent";
 
 class ExperienceInfo extends Component {
-  exdChangeHandler = (index) => (e, value) => {
+  handler = (index) => (e, value) => {
     const { name } = e.target;
     const data = [...this.props.value];
     data[index][name] = value;
@@ -13,87 +12,59 @@ class ExperienceInfo extends Component {
 
   render() {
     return (
-      <div className="experience">
-        <h2>Experience Detail</h2>
+      <FormContent>
         {this.props.value.map((item, index) => (
-          <div key={uniqid()} className="formcontrolwrappers">
-            <label htmlFor="organization">
-              <input
-                type="text"
-                name="organization"
-                id="organization"
-                placeholder="Name of organization"
-                value={item.organization}
-                onChange={this.exdChangeHandler(index)}
-              />
-            </label>
-            <label htmlFor="jobRole">
-              <input
-                type="text"
-                name="jobRole"
-                id="jobRole"
-                placeholder="Qualification Obtained"
-                value={item.jobRole}
-                onChange={this.exdChangeHandler(index)}
-              />
-            </label>
-            <label htmlFor="duration">
-              <input
-                type="text"
-                name="duration"
-                id="duration"
-                placeholder="Study period (ex:2015-2018)"
-                value={item.duration}
-                onChange={this.exdChangeHandler(index)}
-              />
-            </label>
-          </div>
-        ))}
+          <article className="experience" key={item.id} id={item.id}>
+            {this.props.value.length - 1 !== 0 && (
+              <div className="remove-wrapper">
+                <button
+                  className="removebtn"
+                  onClick={() => {
+                    this.props.removeFormItemHandler(item.id, "experience");
+                  }}
+                >
+                  - Remove
+                </button>
+              </div>
+            )}
 
-        {/* <div className="alleducation">
-          <h2>Educational History</h2>
-          {this.state.educationList.map((educationItem, index) => {
-            console.log(educationItem);
-            return (
-              <article key={uniqid()}>
-                <div className="formcontrolwrappers">
-                  <label htmlFor="school">
-                    <input
-                      type="text"
-                      name="school"
-                      id="school"
-                      placeholder="Name of School"
-                      // value={educationItem.school}
-                      value={this.state.educationList[index].name}
-                      onChange={(e) => this.onChangeHandler(e, index)}
-                    />
-                  </label>
-                  <label htmlFor="qualification">
-                    <input
-                      type="text"
-                      name="qualification"
-                      id="qualification"
-                      placeholder="Qualification Obtained"
-                      value={this.state.educationList[index].name}
-                      onChange={(e) => this.onChangeHandler(e, index)}
-                    />
-                  </label>
-                  <label htmlFor="period">
-                    <input
-                      type="text"
-                      name="period"
-                      id="period"
-                      placeholder="Study period (ex:2015-2018)"
-                      value={this.state.educationList[index].name}
-                      onChange={(e) => this.onChangeHandler(e, index)}
-                    />
-                  </label>
-                </div>
-              </article>
-            );
-          })}
-        </div> */}
-      </div>
+            <label htmlFor="company" style={{ display: "block" }} />
+            <input
+              type="text"
+              id="company"
+              name="company"
+              value={item.company}
+              onChange={this.handler(index)}
+              placeholder="Company Name"
+            />
+            <label htmlFor="role" style={{ display: "block" }} />
+            <input
+              type="text"
+              id="role"
+              name="role"
+              value={item.role}
+              onChange={this.handler(index)}
+              placeholder="Role"
+            />
+            <label htmlFor="period" style={{ display: "block" }} />
+            <input
+              type="text"
+              id="period"
+              name="period"
+              value={item.period}
+              onChange={this.handler(index)}
+              placeholder="Period"
+            />
+          </article>
+        ))}
+        {this.props.value.length < 4 && (
+          <div className="addbtnwrapper">
+            <button onClick={() => this.props.addFormItemHandler("experience")}>
+              + Add Experience details
+            </button>
+          </div>
+        )}
+      </FormContent>
     );
   }
 }

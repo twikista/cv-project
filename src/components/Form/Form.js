@@ -82,7 +82,7 @@ class Form extends Component {
     this.setState((prevState) => ({ ...prevState, ...data }));
   };
 
-  removeFormitemHandler = (id, field) => {
+  removeFormItemHandler = (id, field) => {
     const data = { ...this.state };
     data[field] = data[field].filter((item) => item.id !== id);
     this.setState((prevState) => ({ ...prevState, ...data }));
@@ -129,40 +129,36 @@ class Form extends Component {
           <FormHeader heading="Education Details">
             <TbSchool size="1.3rem" style={{ marginRight: "0.5rem" }} />
           </FormHeader>
-          <div className="wrapper">
-            <EducationDetails
-              value={this.state.education}
-              handler={this.onChangeHandler("education")}
-              addHandler={() => this.addHandler("education")}
-              removeHandler={this.removeHandler}
-            />
-            <FormFooter
-              step={this.state.step}
-              next={this.next}
-              previous={this.previous}
-              resetHandler={this.resetFormHandler}
-            />
-          </div>
+          <EducationDetails
+            value={this.state.education}
+            handler={this.onChangeHandler("education")}
+            addFormItemHandler={() => this.addFormItemHandler("education")}
+            removeFormItemHandler={this.removeFormItemHandler}
+          />
+          <FormFooter
+            step={this.state.step}
+            next={this.next}
+            previous={this.previous}
+            resetHandler={this.resetFormHandler}
+          />
         </>
       );
     } else if (step === 3) {
       contentToRender = (
         <>
           <FormHeader heading="Experience Details" />
-          <div className="wrapper">
-            <ExperienceDetails
-              value={this.state.experience}
-              handler={this.onChangeHandler("experience")}
-              addHandler={this.addHandler}
-              removeHandler={this.removeHandler}
-            />
-            <FormFooter
-              step={this.state.step}
-              next={this.next}
-              previous={this.previous}
-              resetHandler={this.resetFormHandler}
-            />
-          </div>
+          <ExperienceDetails
+            value={this.state.experience}
+            handler={this.onChangeHandler("experience")}
+            addFormItemHandler={this.addFormItemHandler}
+            removeFormItemHandler={this.removeFormItemHandler}
+          />
+          <FormFooter
+            step={this.state.step}
+            next={this.next}
+            previous={this.previous}
+            resetHandler={this.resetFormHandler}
+          />
         </>
       );
     }

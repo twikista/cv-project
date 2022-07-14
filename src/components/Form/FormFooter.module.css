@@ -1,6 +1,6 @@
 .formfooter{
     /* color: #d9d4e7; */
-    color: #1b2d45;
+    color: #d9d4e7;
     /* background-color: #1b2d45; */
     /* border-top:#1b2d45 solid 2px; */
     font-size: 1rem;
@@ -24,35 +24,66 @@ nav{
     border-radius: 3px;
     outline: none;
     appearance: none;
-    padding: 0.6rem 0.8rem;
+    /* padding: 0.6rem 0.8rem; */
     text-transform: uppercase;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
     cursor: pointer;
     box-shadow:  rgba(0, 0, 0, 0.16) 0px 1px 4px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
   }
 
   .btn:hover{
-    background-color: #ff8966;
-    color: #1b2d45;
+    background-color: #008080;
     
   }
 
 
-.resetbtn, .nextbtnFull{
+.resetbtn{
     width: 100%;
+    margin-bottom: 0.5rem;
     
 }
 
-.resetbtn{
-    margin-top: 0.5rem;
+.resetbtn, .submitbtn{
+    
+    padding: 0.6rem 0.8rem;
 }
 
-.prevbtn, .nextbtnHalf, .submitbtn{
+.prevbtn, .nextbtn{
+    width:40px;
+    padding: 0.5rem 0;
+    
+    
+}
+
+.prevbtn svg, .nextbtn svg{
+    transition:  transform 0.4s ease;
+
+}
+
+.prevbtn:hover svg{
+    transform: translateX(-5px)
+}
+
+.nextbtn:hover svg{
+    transform: translateX(5px)
+}
+
+
+.submitbtn{
     width:48%
 }
+
+.single{
+    display: flex;
+    justify-content: flex-end;
+}
+
 
 /* button{
     background-color: blue;
