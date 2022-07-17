@@ -3,6 +3,10 @@ import styles from "./FormFooter.module.css";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 class FormFooter extends Component {
+  handler = () => {
+    this.props.appDataStoreHandler();
+    this.props.next();
+  };
   render() {
     const { step, next, previous, resetHandler } = this.props;
     return (
@@ -11,7 +15,7 @@ class FormFooter extends Component {
           {step === 3 && (
             <button
               className={`${styles.submitbtn} ${styles.btn}`}
-              onClick={this.props.appDataStoreHandler}
+              onClick={this.handler}
             >
               Submit
             </button>

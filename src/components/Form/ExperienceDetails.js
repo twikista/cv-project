@@ -1,33 +1,27 @@
 import React, { Component } from "react";
 import FormContent from "../layout/FormContent";
 import AddFormItemBtn from "./AddFormItemBtn";
+import RemoveFormItemBtn from "./RemoveFormItemBtn";
 
 class ExperienceInfo extends Component {
-  handler = (index) => (e, value) => {
-    const { name } = e.target;
+  handler = (index) => (e, val) => {
+    const { name, value } = e.target;
     const data = [...this.props.value];
     data[index][name] = value;
-    this.props.onChangeHandler(e, data);
-    console.log(this.props);
+    this.props.handler(e, data);
   };
 
   render() {
     return (
       <FormContent>
         {this.props.value.map((item, index) => (
-          <article className="experience" key={item.id} id={item.id}>
-            {this.props.value.length - 1 !== 0 && (
-              <div className="remove-wrapper">
-                <button
-                  className="removebtn"
-                  onClick={() => {
-                    this.props.removeFormItemHandler(item.id, "experience");
-                  }}
-                >
-                  - Remove
-                </button>
-              </div>
-            )}
+          <article className="experience" key={item.id}>
+            <RemoveFormItemBtn
+              value={this.props.value}
+              removeFormItemHandler={this.props.removeFormItemHandler}
+              item={item}
+              field="experience"
+            />
 
             <label htmlFor="company" style={{ display: "block" }} />
             <input
@@ -61,7 +55,7 @@ class ExperienceInfo extends Component {
         <AddFormItemBtn
           value={this.props.value}
           addFormItemHandler={this.props.addFormItemHandler}
-          text="Add Education Details"
+          text="Add Employment Details"
         />
       </FormContent>
     );

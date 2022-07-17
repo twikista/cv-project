@@ -6,7 +6,7 @@ class Footer extends Component {
     return (
       <footer className={styles.footer}>
         <div className={styles.socials}>
-          <ul>
+          <ul className={styles.socials_list}>
             <li>
               <FaGithub />
             </li>

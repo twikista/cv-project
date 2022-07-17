@@ -7,6 +7,7 @@
     border:0.2rem solid #1b2945;
     overflow: hidden;
     padding-bottom: 0.5rem;
+    width: 100%;
     max-width: 480px;
 
 }

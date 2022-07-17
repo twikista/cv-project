@@ -49,6 +49,11 @@ nav{
     
   }
 
+  .resetbtn:hover{
+    background-color: rgba(250, 82, 70, 0.8);
+    color: #1b2d45;
+  }
+
 
 .resetbtn, .nextbtnfull, .prevbtnfull, .submitbtn{
     width: 100%;
@@ -63,12 +68,17 @@ nav{
 
 .prevbtn, .nextbtn{
     width:40px;
-    padding: 0.5rem 0;
-    
-    
+    padding: 0.5rem 0;       
 }
 
-.prevbtn svg, .nextbtn svg, .nextbtnfull svg{
+@media(min-width:480px){
+    .prevbtn, .nextbtn{
+        width:80px;     
+    }
+
+}
+
+.prevbtn svg, .nextbtn svg, .nextbtnfull svg, .prevbtnfull svg{
     transition:  transform 0.4s ease;
 
 }

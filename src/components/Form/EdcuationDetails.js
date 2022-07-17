@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import FormContent from "../layout/FormContent";
 import AddFormItemBtn from "./AddFormItemBtn";
+import RemoveFormItemBtn from "./RemoveFormItemBtn";
 
 class Education extends Component {
   handler = (index) => (e, val) => {
@@ -14,19 +15,13 @@ class Education extends Component {
     return (
       <FormContent>
         {this.props.value.map((item, index) => (
-          <article className="formfields" key={item.id}>
-            {this.props.value.length - 1 !== 0 && (
-              <div className="remove-wrapper">
-                <button
-                  className="removebtn"
-                  onClick={() => {
-                    this.props.removeFormItemHandler(item.id, "education");
-                  }}
-                >
-                  - Remove
-                </button>
-              </div>
-            )}
+          <article className="form_fields" key={item.id}>
+            <RemoveFormItemBtn
+              value={this.props.value}
+              removeFormItemHandler={this.props.removeFormItemHandler}
+              item={item}
+              field="education"
+            />
             <label htmlFor="school" style={{ display: "block" }} />
             <input
               type="text"

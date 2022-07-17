@@ -12,7 +12,6 @@ import { MdOutlineWorkOutline } from "react-icons/md";
 
 class Form extends Component {
   initialState = {
-    step: 1,
     basicDetails: {
       firstName: "",
       lastName: "",
@@ -38,7 +37,6 @@ class Form extends Component {
   };
 
   state = {
-    step: 1,
     basicDetails: {
       firstName: "",
       lastName: "",
@@ -90,45 +88,47 @@ class Form extends Component {
   };
 
   resetFormHandler = () => {
-    let data = { ...this.stata };
+    let data = { ...this.state };
     data = this.initialState;
     this.setState(data);
+    this.props.resetHandler();
   };
 
-  next = () => {
+  /* next = () => {
     this.setState((prevState) => ({ step: prevState.step + 1 }));
   };
 
   previous = () => {
     this.setState((prevState) => ({ step: prevState.step - 1 }));
-  };
+  };*/
 
   render() {
-    const step = this.state.step;
+    // const step = this.props.step;
     let contentToRender;
-    if (step === 1) {
+    if (this.props.step === 1) {
       contentToRender = (
         <>
           <FormHeader heading="Basic Details">
-            <BiUser size="1.3rem" style={{ marginRight: "0.5rem" }} />
+            <BiUser />
           </FormHeader>
           <BasicDetails
             value={this.state.basicDetails}
             handler={this.onChangeHandler("basicDetails")}
+            next={this.props.next}
           />
           <FormFooter
-            step={this.state.step}
-            next={this.next}
-            previous={this.previous}
+            step={this.props.step}
+            next={this.props.next}
+            previous={this.props.previous}
             resetHandler={this.resetFormHandler}
           />
         </>
       );
-    } else if (step === 2) {
+    } else if (this.props.step === 2) {
       contentToRender = (
         <>
           <FormHeader heading="Education Details">
-            <TbSchool size="1.3rem" style={{ marginRight: "0.5rem" }} />
+            <TbSchool />
           </FormHeader>
           <EducationDetails
             value={this.state.education}
@@ -137,21 +137,18 @@ class Form extends Component {
             removeFormItemHandler={this.removeFormItemHandler}
           />
           <FormFooter
-            step={this.state.step}
-            next={this.next}
-            previous={this.previous}
+            step={this.props.step}
+            next={this.props.next}
+            previous={this.props.previous}
             resetHandler={this.resetFormHandler}
           />
         </>
       );
-    } else if (step === 3) {
+    } else if (this.props.step === 3) {
       contentToRender = (
         <>
-          <FormHeader heading="Experience Details">
-            <MdOutlineWorkOutline
-              size="1.3rem"
-              style={{ marginRight: "0.5rem" }}
-            />
+          <FormHeader heading="Employment Details">
+            <MdOutlineWorkOutline />
           </FormHeader>
           <ExperienceDetails
             value={this.state.experience}
@@ -160,9 +157,9 @@ class Form extends Component {
             removeFormItemHandler={this.removeFormItemHandler}
           />
           <FormFooter
-            step={this.state.step}
-            next={this.next}
-            previous={this.previous}
+            step={this.props.step}
+            next={this.props.next}
+            previous={this.props.previous}
             resetHandler={this.resetFormHandler}
             appDataStoreHandler={() =>
               this.props.appDataStoreHandler(this.state)

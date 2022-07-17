@@ -1,31 +1,44 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 import styles from "./App.module.css";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const App = () => {
+  const [appData, setAppData] = useState({});
+  const [step, setStep] = useState(1);
 
-  appDataStoreHandler = (val) => {
-    this.setState({ ...val });
-    // setAppData(val);
-    console.log("App Data Store");
-    console.log(this.state);
+  const appDataStoreHandler = (formData) => {
+    setAppData((prevState) => ({ ...prevState, ...formData }));
   };
 
-  render() {
-    return (
-      <div className={styles.app}>
-        <Header />
-        <Main appDataStoreHandler={this.appDataStoreHandler} />
-        <Footer />
-      </div>
-    );
-  }
-}
+  const next = () => {
+    setStep((prevState) => prevState + 1);
+  };
+
+  const previous = () => {
+    setStep((prevState) => prevState - 1);
+  };
+
+  const resetHandler = () => {
+    setStep(1);
+    setAppData({});
+  };
+
+  return (
+    <div className={styles.app}>
+      <Header />
+      <Main
+        appDataStoreHandler={appDataStoreHandler}
+        step={step}
+        next={next}
+        previous={previous}
+        resetHandler={resetHandler}
+        appData={appData}
+      />
+      <Footer />
+    </div>
+  );
+};
 
 export default App;
