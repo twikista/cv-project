@@ -1,0 +1,27 @@
+import React, { Component } from "react";
+import FormContent from "../layout/FormContent";
+import PersonalDetailsFormInputs from "./PersonalDetailsFormInputs";
+import FormHeader from "./FormHeader";
+import FormFooter from "./FormFooter";
+import { BiUser } from "react-icons/bi";
+
+class PersonalDetailsForm extends Component {
+  onChangeHandler = (field) => (e) => {
+    const data = { ...this.props.value };
+    data[field] = e.target.value;
+    this.props.handler(e, data);
+  };
+
+  render() {
+    return (
+      <FormContent>
+        <PersonalDetailsFormInputs
+          value={this.props.value}
+          onChangeHandler={this.onChangeHandler}
+        />
+      </FormContent>
+    );
+  }
+}
+
+export default PersonalDetailsForm;
