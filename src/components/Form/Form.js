@@ -11,6 +11,7 @@ import { TbSchool } from "react-icons/tb";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import PersonalDetailsForm from "./PersonalDetailsForm";
 import EducationDetailsForm from "./EducationDetailsForm";
+import EmploymentDetailsForm from "./EmploymentDetailsForm";
 
 class Form extends Component {
   initialState = {
@@ -190,26 +191,38 @@ class Form extends Component {
       );
     } else if (this.props.step === 3) {
       contentToRender = (
-        <>
-          <FormHeader heading="Employment Details">
-            <MdOutlineWorkOutline />
-          </FormHeader>
-          <ExperienceDetails
-            value={this.state.experience}
-            handler={this.onChangeHandler("experience")}
-            addFormItemHandler={this.addFormItemHandler}
-            removeFormItemHandler={this.removeFormItemHandler}
-          />
-          <FormFooter
-            step={this.props.step}
-            next={this.props.next}
-            previous={this.props.previous}
-            resetHandler={this.resetFormHandler}
-            appDataStoreHandler={() =>
-              this.props.appDataStoreHandler(this.state)
-            }
-          />
-        </>
+        <EmploymentDetailsForm
+          value={this.state.experience}
+          handler={this.onChangeHandler("experience")}
+          addFormItemHandler={this.addFormItemHandler}
+          removeFormItemHandler={this.removeFormItemHandler}
+          step={this.props.step}
+          next={this.props.next}
+          previous={this.props.previous}
+          resetHandler={this.resetFormHandler}
+          submitHandler={() => this.props.appDataStoreHandler(this.state)}
+        />
+        // <>
+
+        //   <FormHeader heading="Employment Details">
+        //     <MdOutlineWorkOutline />
+        //   </FormHeader>
+        //   <ExperienceDetails
+        //     value={this.state.experience}
+        //     handler={this.onChangeHandler("experience")}
+        //     addFormItemHandler={this.addFormItemHandler}
+        //     removeFormItemHandler={this.removeFormItemHandler}
+        //   />
+        //   <FormFooter
+        //     step={this.props.step}
+        //     next={this.props.next}
+        //     previous={this.props.previous}
+        //     resetHandler={this.resetFormHandler}
+        //     appDataStoreHandler={() =>
+        //       this.props.appDataStoreHandler(this.state)
+        //     }
+        //   />
+        // </>
       );
     }
 

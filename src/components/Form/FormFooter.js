@@ -4,7 +4,7 @@ import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 class FormFooter extends Component {
   handler = () => {
-    this.props.appDataStoreHandler();
+    this.props.submitHandler();
     this.props.next();
   };
   render() {
