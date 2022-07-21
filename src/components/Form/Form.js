@@ -62,6 +62,7 @@ class Form extends Component {
         period: "",
       },
     ],
+    skills: [],
   };
 
   onChangeHandler = (field) => (e, val) => {
@@ -116,6 +117,7 @@ class Form extends Component {
           period: "",
         },
       ],
+      skills: [],
     });
     this.props.resetHandler();
   };

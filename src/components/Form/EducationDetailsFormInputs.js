@@ -1,4 +1,5 @@
 import RemoveFormItemBtn from "./RemoveFormItemBtn";
+import styles from "./EducationDetailsFormInputs.module.css";
 const EducationDeatilsFormInputs = ({
   onChangeHandler,
   value,
@@ -10,7 +11,7 @@ const EducationDeatilsFormInputs = ({
   const { school, qualification, duration } = item;
 
   return (
-    <article className="form_fields">
+    <article className={styles.form_fields}>
       <RemoveFormItemBtn
         value={value}
         removeFormItemHandler={removeFormItemHandler}

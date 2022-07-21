@@ -7,7 +7,7 @@ class RemoveFormItemBtn extends Component {
     return (
       <>
         {this.props.value.length - 1 !== 0 && (
-          <div className="remove-wrapper">
+          <div className={styles.remove_wrapper}>
             <button
               className={styles.removebtn}
               onClick={() => {
