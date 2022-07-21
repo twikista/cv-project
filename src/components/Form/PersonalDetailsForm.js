@@ -14,12 +14,23 @@ class PersonalDetailsForm extends Component {
 
   render() {
     return (
-      <FormContent>
-        <PersonalDetailsFormInputs
-          value={this.props.value}
-          onChangeHandler={this.onChangeHandler}
+      <>
+        <FormHeader heading="Basic Details">
+          <BiUser />
+        </FormHeader>
+        <FormContent>
+          <PersonalDetailsFormInputs
+            value={this.props.value}
+            onChangeHandler={this.onChangeHandler}
+          />
+        </FormContent>
+        <FormFooter
+          step={this.props.step}
+          next={this.props.next}
+          previous={this.props.previous}
+          resetHandler={this.props.resetHandler}
         />
-      </FormContent>
+      </>
     );
   }
 }

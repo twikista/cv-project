@@ -11,22 +11,6 @@ class FormFooter extends Component {
     const { step, next, previous, resetHandler } = this.props;
     return (
       <div className={styles.formfooter}>
-        <div className="resetform">
-          {step === 3 && (
-            <button
-              className={`${styles.submitbtn} ${styles.btn}`}
-              onClick={this.handler}
-            >
-              Submit
-            </button>
-          )}
-          <button
-            className={`${styles.resetbtn} ${styles.btn}`}
-            onClick={resetHandler}
-          >
-            Reset
-          </button>
-        </div>
         <nav
           className={
             this.props.step === 1 || this.props.step > 2
@@ -56,6 +40,22 @@ class FormFooter extends Component {
             </button>
           )}
         </nav>
+        <div className={styles.reset_form}>
+          {step === 3 && (
+            <button
+              className={`${styles.submitbtn} ${styles.btn}`}
+              onClick={this.handler}
+            >
+              Submit
+            </button>
+          )}
+          <button
+            className={`${styles.resetbtn} ${styles.btn}`}
+            onClick={resetHandler}
+          >
+            Reset
+          </button>
+        </div>
       </div>
     );
   }

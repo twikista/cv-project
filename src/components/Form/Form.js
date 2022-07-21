@@ -9,6 +9,7 @@ import FormHeader from "./FormHeader";
 import { BiUser } from "react-icons/bi";
 import { TbSchool } from "react-icons/tb";
 import { MdOutlineWorkOutline } from "react-icons/md";
+import PersonalDetailsForm from "./PersonalDetailsForm";
 
 class Form extends Component {
   initialState = {
@@ -88,9 +89,32 @@ class Form extends Component {
   };
 
   resetFormHandler = () => {
-    let data = { ...this.state };
-    data = this.initialState;
-    this.setState(data);
+    // let data = { ...this.state };
+    // data = this.initialState;
+    this.setState({
+      basicDetails: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+      },
+      education: [
+        {
+          id: uniqid(),
+          school: "",
+          qualification: "",
+          duration: "",
+        },
+      ],
+      experience: [
+        {
+          id: uniqid(),
+          company: "",
+          role: "",
+          period: "",
+        },
+      ],
+    });
     this.props.resetHandler();
   };
 
@@ -107,22 +131,30 @@ class Form extends Component {
     let contentToRender;
     if (this.props.step === 1) {
       contentToRender = (
-        <>
-          <FormHeader heading="Basic Details">
-            <BiUser />
-          </FormHeader>
-          <BasicDetails
-            value={this.state.basicDetails}
-            handler={this.onChangeHandler("basicDetails")}
-            next={this.props.next}
-          />
-          <FormFooter
-            step={this.props.step}
-            next={this.props.next}
-            previous={this.props.previous}
-            resetHandler={this.resetFormHandler}
-          />
-        </>
+        <PersonalDetailsForm
+          value={this.state.basicDetails}
+          handler={this.onChangeHandler("basicDetails")}
+          step={this.props.step}
+          next={this.props.next}
+          previous={this.props.previous}
+          resetHandler={this.resetFormHandler}
+        />
+        // <>
+        //   <FormHeader heading="Basic Details">
+        //     <BiUser />
+        //   </FormHeader>
+        //   <BasicDetails
+        //     value={this.state.basicDetails}
+        //     handler={this.onChangeHandler("basicDetails")}
+        //     next={this.props.next}
+        //   />
+        //   <FormFooter
+        //     step={this.props.step}
+        //     next={this.props.next}
+        //     previous={this.props.previous}
+        //     resetHandler={this.resetFormHandler}
+        //   />
+        // </>
       );
     } else if (this.props.step === 2) {
       contentToRender = (
