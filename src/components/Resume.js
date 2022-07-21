@@ -8,9 +8,9 @@ class Resume extends Component {
   render() {
     return (
       <section className={styles.resume_wrapper}>
-        <h2
+        {/* <h2
           className={styles.section_heading}
-        >{`${this.props.appData.basicDetails.firstName} ${this.props.appData.basicDetails.lastName}`}</h2>
+        >{`${this.props.appData.basicDetails.firstName} ${this.props.appData.basicDetails.lastName}`}</h2> */}
         <div className={styles.resume_content}>
           <PersonalDetails data={this.props.appData.basicDetails} />
           <EducationList data={this.props.appData.education} />

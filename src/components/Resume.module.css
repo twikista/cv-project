@@ -9,6 +9,7 @@
     overflow: hidden;
     box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
     color: #444;
+    padding-top: 20px ;
    
     /* justify-content: center; */
 }
@@ -24,7 +25,7 @@
 }
 
 .resume_content{
-    padding: 30px 30px 20px 25px;
+    padding: 30px 30px 30px 30px;
     width: 100%;
 
 }
