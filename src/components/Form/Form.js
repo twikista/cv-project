@@ -10,6 +10,7 @@ import { BiUser } from "react-icons/bi";
 import { TbSchool } from "react-icons/tb";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import PersonalDetailsForm from "./PersonalDetailsForm";
+import EducationDetailsForm from "./EducationDetailsForm";
 
 class Form extends Component {
   initialState = {
@@ -158,23 +159,34 @@ class Form extends Component {
       );
     } else if (this.props.step === 2) {
       contentToRender = (
-        <>
-          <FormHeader heading="Education Details">
-            <TbSchool />
-          </FormHeader>
-          <EducationDetails
-            value={this.state.education}
-            handler={this.onChangeHandler("education")}
-            addFormItemHandler={() => this.addFormItemHandler("education")}
-            removeFormItemHandler={this.removeFormItemHandler}
-          />
-          <FormFooter
-            step={this.props.step}
-            next={this.props.next}
-            previous={this.props.previous}
-            resetHandler={this.resetFormHandler}
-          />
-        </>
+        <EducationDetailsForm
+          value={this.state.education}
+          handler={this.onChangeHandler("education")}
+          addFormItemHandler={() => this.addFormItemHandler("education")}
+          removeFormItemHandler={this.removeFormItemHandler}
+          step={this.props.step}
+          next={this.props.next}
+          previous={this.props.previous}
+          resetHandler={this.resetFormHandler}
+        />
+        // <>
+
+        //   <FormHeader heading="Education Details">
+        //     <TbSchool />
+        //   </FormHeader>
+        //   <EducationDetails
+        //     value={this.state.education}
+        //     handler={this.onChangeHandler("education")}
+        //     addFormItemHandler={() => this.addFormItemHandler("education")}
+        //     removeFormItemHandler={this.removeFormItemHandler}
+        //   />
+        //   <FormFooter
+        //     step={this.props.step}
+        //     next={this.props.next}
+        //     previous={this.props.previous}
+        //     resetHandler={this.resetFormHandler}
+        //   />
+        // </>
       );
     } else if (this.props.step === 3) {
       contentToRender = (
