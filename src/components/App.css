@@ -1,0 +1,22 @@
+.app{
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.label{
+    width: 30%;
+    font-weight: 600;
+    vertical-align: top;
+    padding-bottom: 5px;
+}
+
+.info{
+    width: 60%;
+    vertical-align: top;
+    padding-bottom: 5px;
+    text-align: right;
+}

@@ -17,19 +17,19 @@ class PersonalDetails extends Component {
           </thead>
           <tbody>
             <tr>
-              <td className={styles.label}>Name</td>
+              <td className="label">Name</td>
               <td
-                className={styles.info}
+                className="info"
                 style={{ textTransform: "capitalize" }}
               >{`${firstName} ${lastName}`}</td>
             </tr>
             <tr>
-              <td className={styles.label}>Email</td>
-              <td className={styles.info}>{email}</td>
+              <td className="label">Email</td>
+              <td className="info">{email}</td>
             </tr>
             <tr>
-              <td className={styles.label}>Phone Number</td>
-              <td className={styles.info}>{phone}</td>
+              <td className="label">Phone Number</td>
+              <td className="info">{phone}</td>
             </tr>
           </tbody>
         </table>

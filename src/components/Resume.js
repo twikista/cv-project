@@ -12,9 +12,9 @@ class Resume extends Component {
           className={styles.section_heading}
         >{`${this.props.appData.basicDetails.firstName} ${this.props.appData.basicDetails.lastName}`}</h2> */}
         <div className={styles.resume_content}>
-          <PersonalDetails data={this.props.appData.basicDetails} />
-          <EducationList data={this.props.appData.education} />
-          <EmploymentList data={this.props.appData.experience} />
+          <PersonalDetails data={this.props.resumes[0].basicDetails} />
+          <EducationList data={this.props.resumes[0].education} />
+          <EmploymentList data={this.props.resumes[0].experience} />
         </div>
       </section>
     );

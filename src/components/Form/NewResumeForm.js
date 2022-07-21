@@ -13,7 +13,7 @@ import PersonalDetailsForm from "./PersonalDetailsForm";
 import EducationDetailsForm from "./EducationDetailsForm";
 import EmploymentDetailsForm from "./EmploymentDetailsForm";
 
-class Form extends Component {
+class NewResumeForm extends Component {
   initialState = {
     basicDetails: {
       firstName: "",
@@ -40,6 +40,7 @@ class Form extends Component {
   };
 
   state = {
+    step: 1,
     basicDetails: {
       firstName: "",
       lastName: "",
@@ -95,6 +96,7 @@ class Form extends Component {
     // let data = { ...this.state };
     // data = this.initialState;
     this.setState({
+      step: 1,
       basicDetails: {
         firstName: "",
         lastName: "",
@@ -122,25 +124,25 @@ class Form extends Component {
     this.props.resetHandler();
   };
 
-  /* next = () => {
+  next = () => {
     this.setState((prevState) => ({ step: prevState.step + 1 }));
   };
 
   previous = () => {
     this.setState((prevState) => ({ step: prevState.step - 1 }));
-  };*/
+  };
 
   render() {
-    // const step = this.props.step;
+    const step = this.state.step;
     let contentToRender;
-    if (this.props.step === 1) {
+    if (step === 1) {
       contentToRender = (
         <PersonalDetailsForm
           value={this.state.basicDetails}
           handler={this.onChangeHandler("basicDetails")}
-          step={this.props.step}
-          next={this.props.next}
-          previous={this.props.previous}
+          step={step}
+          next={this.next}
+          previous={this.previous}
           resetHandler={this.resetFormHandler}
         />
         // <>
@@ -160,16 +162,16 @@ class Form extends Component {
         //   />
         // </>
       );
-    } else if (this.props.step === 2) {
+    } else if (step === 2) {
       contentToRender = (
         <EducationDetailsForm
           value={this.state.education}
           handler={this.onChangeHandler("education")}
           addFormItemHandler={() => this.addFormItemHandler("education")}
           removeFormItemHandler={this.removeFormItemHandler}
-          step={this.props.step}
-          next={this.props.next}
-          previous={this.props.previous}
+          step={step}
+          next={this.next}
+          previous={this.previous}
           resetHandler={this.resetFormHandler}
         />
         // <>
@@ -191,18 +193,18 @@ class Form extends Component {
         //   />
         // </>
       );
-    } else if (this.props.step === 3) {
+    } else if (step === 3) {
       contentToRender = (
         <EmploymentDetailsForm
           value={this.state.experience}
           handler={this.onChangeHandler("experience")}
           addFormItemHandler={this.addFormItemHandler}
           removeFormItemHandler={this.removeFormItemHandler}
-          step={this.props.step}
-          next={this.props.next}
-          previous={this.props.previous}
+          step={step}
+          next={this.next}
+          previous={this.previous}
           resetHandler={this.resetFormHandler}
-          submitHandler={() => this.props.appDataStoreHandler(this.state)}
+          submitHandler={() => this.props.submitHandler(this.state)}
         />
         // <>
 
@@ -232,4 +234,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default NewResumeForm;

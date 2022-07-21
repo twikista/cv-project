@@ -7,16 +7,17 @@ class EmploymentItem extends Component {
       <tr>
         <td
           className="label"
-          style={{
-            width: "30%",
-            fontWeight: "600",
-            verticalAlign: "top",
-            paddingBottom: "5px",
-          }}
+          // style={{
+          //   width: "30%",
+          //   fontWeight: "600",
+          //   verticalAlign: "top",
+          //   paddingBottom: "5px",
+          // }}
         >
           {period}
         </td>
         <td
+          className="info"
           style={{ width: "60%", verticalAlign: "top", paddingBottom: "5px" }}
         >
           <span className="role" style={{ fontWeight: "600" }}>

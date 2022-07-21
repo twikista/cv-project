@@ -1,0 +1,13 @@
+.label{
+    width: 30%;
+    font-weight: 600;
+    vertical-align: top;
+    padding-bottom: 5px;
+}
+
+.info{
+    width: 60%;
+    vertical-align: top;
+    padding-bottom: 5px;
+    text-align: right;
+}

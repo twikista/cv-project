@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styles from "./EducationItem.module.css";
 
 class EducationItem extends Component {
   render() {
@@ -6,19 +7,24 @@ class EducationItem extends Component {
     return (
       <tr>
         <td
-          className="label"
-          style={{
-            width: "30%",
-            fontWeight: "600",
-            verticalAlign: "top",
-            paddingBottom: "5px",
-          }}
+          className={"label"}
+          // style={{
+          //   width: "30%",
+          //   fontWeight: "600",
+          //   verticalAlign: "top",
+          //   paddingBottom: "5px",
+          // }}
         >
           {duration}
         </td>
         <td
-          className="info"
-          style={{ width: "60%", verticalAlign: "top", paddingBottom: "5px" }}
+          className={"info"}
+          // style={{
+          //   width: "60%",
+          //   verticalAlign: "top",
+          //   paddingBottom: "5px",
+          //   textAlign: "right",
+          // }}
         >
           <span className="qualification" style={{ fontWeight: "600" }}>
             {qualification}

@@ -1,25 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Main from "./Main";
+import NewResumeForm from "./Form/NewResumeForm";
+import Resume from "./Resume";
+import { Routes, Route } from "react-router-dom";
 import Footer from "./Footer";
-import styles from "./App.module.css";
+import uniqid from "uniqid";
+import "./App.css";
 
 const App = () => {
-  const [appData, setAppData] = useState({});
+  const storageKey = "resumes";
+  const [resumes, setResumes] = useState(
+    JSON.parse(localStorage.getItem(storageKey)) ?? []
+  );
   const [step, setStep] = useState(1);
-  const storageKey = "appdata";
 
   useEffect(() => {
-    const retrievedData = JSON.parse(localStorage.getItem(storageKey));
-    setAppData(retrievedData);
-  }, []);
+    localStorage.setItem(storageKey, JSON.stringify(resumes));
+  }, [resumes]);
 
-  useEffect(() => {
-    localStorage.setItem(storageKey, JSON.stringify(appData));
-  }, [appData]);
-
-  const appDataStoreHandler = (formData) => {
-    setAppData((prevState) => ({ ...prevState, ...formData }));
+  const submitHandler = (formData) => {
+    setResumes((prevState) => [...prevState, { id: uniqid(), ...formData }]);
   };
 
   const next = () => {
@@ -32,20 +33,28 @@ const App = () => {
 
   const resetHandler = () => {
     setStep(1);
-    setAppData({});
   };
 
   return (
-    <div className={styles.app}>
+    <div className={"app"}>
       <Header />
-      <Main
-        appDataStoreHandler={appDataStoreHandler}
-        step={step}
-        next={next}
-        previous={previous}
-        resetHandler={resetHandler}
-        appData={appData}
-      />
+      <Main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <NewResumeForm
+                submitHandler={submitHandler}
+                step={step}
+                next={next}
+                previous={previous}
+                resetHandler={resetHandler}
+              />
+            }
+          />
+          <Route path="preview-resume" element={<Resume resumes={resumes} />} />
+        </Routes>
+      </Main>
       <Footer />
     </div>
   );
