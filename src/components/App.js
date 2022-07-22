@@ -6,6 +6,7 @@ import Resume from "./Resume";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./Footer";
 import uniqid from "uniqid";
+import ResumeThumbnails from "./Resume/ResumeThumbnails";
 import "./App.css";
 
 const App = () => {
@@ -34,14 +35,15 @@ const App = () => {
   const resetHandler = () => {
     setStep(1);
   };
-
+  const lastAddedResume = resumes[resumes.length - 1].basicDetails;
   return (
     <div className={"app"}>
       <Header />
       <Main>
         <Routes>
+          <Route path="/" element={<ResumeThumbnails resumes={resumes} />} />
           <Route
-            path="/"
+            path="new-resume"
             element={
               <NewResumeForm
                 submitHandler={submitHandler}
@@ -52,7 +54,11 @@ const App = () => {
               />
             }
           />
-          <Route path="preview-resume" element={<Resume resumes={resumes} />} />
+          <Route
+            path="preview-resume"
+            element={<Resume resume={lastAddedResume} />}
+          />
+          <Route path="/:resumeId" element={<Resume resume={resumes} />} />
         </Routes>
       </Main>
       <Footer />

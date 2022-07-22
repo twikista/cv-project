@@ -1,14 +1,6 @@
 import React, { Component } from "react";
-import BasicDetails from "./BasicDetails";
-import EducationDetails from "./EdcuationDetails";
-import ExperienceDetails from "./ExperienceDetails";
-import FormFooter from "./FormFooter";
 import styles from "./Form.module.css";
 import uniqid from "uniqid";
-import FormHeader from "./FormHeader";
-import { BiUser } from "react-icons/bi";
-import { TbSchool } from "react-icons/tb";
-import { MdOutlineWorkOutline } from "react-icons/md";
 import PersonalDetailsForm from "./PersonalDetailsForm";
 import EducationDetailsForm from "./EducationDetailsForm";
 import EmploymentDetailsForm from "./EmploymentDetailsForm";
@@ -93,8 +85,6 @@ class NewResumeForm extends Component {
   };
 
   resetFormHandler = () => {
-    // let data = { ...this.state };
-    // data = this.initialState;
     this.setState({
       step: 1,
       basicDetails: {
@@ -145,22 +135,6 @@ class NewResumeForm extends Component {
           previous={this.previous}
           resetHandler={this.resetFormHandler}
         />
-        // <>
-        //   <FormHeader heading="Basic Details">
-        //     <BiUser />
-        //   </FormHeader>
-        //   <BasicDetails
-        //     value={this.state.basicDetails}
-        //     handler={this.onChangeHandler("basicDetails")}
-        //     next={this.props.next}
-        //   />
-        //   <FormFooter
-        //     step={this.props.step}
-        //     next={this.props.next}
-        //     previous={this.props.previous}
-        //     resetHandler={this.resetFormHandler}
-        //   />
-        // </>
       );
     } else if (step === 2) {
       contentToRender = (
@@ -174,24 +148,6 @@ class NewResumeForm extends Component {
           previous={this.previous}
           resetHandler={this.resetFormHandler}
         />
-        // <>
-
-        //   <FormHeader heading="Education Details">
-        //     <TbSchool />
-        //   </FormHeader>
-        //   <EducationDetails
-        //     value={this.state.education}
-        //     handler={this.onChangeHandler("education")}
-        //     addFormItemHandler={() => this.addFormItemHandler("education")}
-        //     removeFormItemHandler={this.removeFormItemHandler}
-        //   />
-        //   <FormFooter
-        //     step={this.props.step}
-        //     next={this.props.next}
-        //     previous={this.props.previous}
-        //     resetHandler={this.resetFormHandler}
-        //   />
-        // </>
       );
     } else if (step === 3) {
       contentToRender = (
@@ -206,27 +162,6 @@ class NewResumeForm extends Component {
           resetHandler={this.resetFormHandler}
           submitHandler={() => this.props.submitHandler(this.state)}
         />
-        // <>
-
-        //   <FormHeader heading="Employment Details">
-        //     <MdOutlineWorkOutline />
-        //   </FormHeader>
-        //   <ExperienceDetails
-        //     value={this.state.experience}
-        //     handler={this.onChangeHandler("experience")}
-        //     addFormItemHandler={this.addFormItemHandler}
-        //     removeFormItemHandler={this.removeFormItemHandler}
-        //   />
-        //   <FormFooter
-        //     step={this.props.step}
-        //     next={this.props.next}
-        //     previous={this.props.previous}
-        //     resetHandler={this.resetFormHandler}
-        //     appDataStoreHandler={() =>
-        //       this.props.appDataStoreHandler(this.state)
-        //     }
-        //   />
-        // </>
       );
     }
 

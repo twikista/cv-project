@@ -1,0 +1,81 @@
+.thumbnail_container{
+    background-color: #f3e8e8;
+    height: 250px;
+    width: 200px;
+    border-radius: 5px;
+    /* background-color: #f7a0be; */
+    box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
+    overflow: hidden;
+} 
+
+.thumbnail_container:hover{
+    transform: scale(1.03);
+    box-shadow: rgba( 104, 3, 177,0.6) 0px 3px 8px;
+}
+
+.thumbnail_container span{
+    display: inline-block;
+    background-color: #d4cccf;
+    height: 3px;
+}
+
+.thumbnail_header{
+    width: 100%;
+    padding:5px 4px 0;
+    height: 15px;
+    /* background-color: rgba(212, 204, 204, 0.8); */
+    /* background-color: #f5ccda; */
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    /* border-bottom: #d4cccf solid 1px; */
+    margin-bottom: 8px;
+}
+
+.resume_name{
+    height: 4px;
+    padding: 0 5px;
+    background-color: #d4cccf;
+    width: 70%;
+}
+
+.thumbnail_content{
+    padding:3px 5px ;
+}
+
+.heading{
+    border-bottom: #d4cccf solid 1px;
+    width: 100%;
+}
+
+.heading_text{
+    height: 4px;
+    width: 30%;
+
+}
+
+.details{
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+}
+
+.label{
+    width: 30%;
+    margin-bottom: 4px;
+}
+
+.info{
+    width: 60%;
+    margin-bottom: 4px;
+}
+.name{
+    width: 45%;
+}
+
+.phone{
+    width: 30%;
+}
+
+
+
