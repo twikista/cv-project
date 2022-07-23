@@ -6,9 +6,10 @@ import EmploymentList from "./Resume/EmploymentList";
 import styles from "./Resume.module.css";
 
 const Resume = ({ lastAddedResume, resumes, isPreview }) => {
+  console.log(lastAddedResume, resumes, isPreview);
   const { resumeId } = useParams();
-  console.log(resumes, resumeId, isPreview, lastAddedResume);
-  const clickedResume = resumes.find((i) => i.id === resumeId);
+  let clickedResume;
+  if (resumes) clickedResume = resumes.find((i) => i.id === resumeId);
   const contentToRender = isPreview ? (
     <section className={styles.resume_wrapper}>
       <div className={styles.resume_content}>
@@ -26,7 +27,7 @@ const Resume = ({ lastAddedResume, resumes, isPreview }) => {
       </div>
     </section>
   );
-  console.log(clickedResume.basicDetails);
+  // console.log(clickedResume.basicDetails);
 
   // const previewResume = (
   //   <section className={styles.resume_wrapper}>

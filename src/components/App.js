@@ -22,6 +22,9 @@ const App = () => {
 
   const submitHandler = (formData) => {
     setResumes((prevState) => [...prevState, { id: uniqid(), ...formData }]);
+    togglePreview(true);
+    console.log("clicked");
+    console.log(resumes);
   };
 
   const togglePreview = (newState) => {
@@ -39,7 +42,7 @@ const App = () => {
   const resetHandler = () => {
     setStep(1);
   };*/
-  const lastAddedResume = resumes[resumes.length - 1].basicDetails;
+  // const lastAddedResume = resumes[resumes.length - 1].basicDetails;
   return (
     <div className={"app"}>
       <Header />
@@ -56,19 +59,14 @@ const App = () => {
           />
           <Route
             path="new-resume"
-            element={
-              <NewResumeForm
-                submitHandler={submitHandler}
-                togglePreview={togglePreview}
-              />
-            }
+            element={<NewResumeForm submitHandler={submitHandler} />}
           />
           {isPreview ? (
             <Route
-              path={"preview-resume"}
+              path={"/preview-resume"}
               element={
                 <Resume
-                  lastAddedResume={lastAddedResume}
+                  lastAddedResume={resumes[resumes.length - 1]}
                   isPreview={isPreview}
                 />
               }

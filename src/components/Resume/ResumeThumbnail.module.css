@@ -1,19 +1,29 @@
-.thumbnail_container{
+.resume_card{
     background-color: #f3e8e8;
+    margin: 2rem 1rem;
     height: 250px;
-    width: 200px;
+    flex: 1 1 calc(50% - 2rem);
     border-radius: 5px;
     /* background-color: #f7a0be; */
     box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
     overflow: hidden;
+    display: inline-block;
+    min-width: 200px;
+    max-width: 250px;
 } 
 
-.thumbnail_container:hover{
+@media(min-width:500px){
+    .resume_card{
+        flex: 1 1 calc(33% - 2rem)
+    }
+}
+
+.resume_card:hover{
     transform: scale(1.03);
     box-shadow: rgba( 104, 3, 177,0.6) 0px 3px 8px;
 }
 
-.thumbnail_container span{
+.resume_card span{
     display: inline-block;
     background-color: #d4cccf;
     height: 3px;
