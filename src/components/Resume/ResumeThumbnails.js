@@ -7,9 +7,7 @@ const ResumeThumbnails = ({ resumes }) => {
   return (
     <div className="container" style={{ display: "flex", gap: "10px" }}>
       {resumes.map((resume) => (
-        <Link to={`/${resume.id}`}>
-          <ResumeThumbnail key={resume.id} resume={resume} />
-        </Link>
+        <ResumeThumbnail key={resume.id} resume={resume} />
       ))}
       <Link to={"new-resume"} className={styles.link}>
         <div className="new_resume_btn_wrapper">

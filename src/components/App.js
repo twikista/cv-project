@@ -14,7 +14,7 @@ const App = () => {
   const [resumes, setResumes] = useState(
     JSON.parse(localStorage.getItem(storageKey)) ?? []
   );
-  const [step, setStep] = useState(1);
+  const [isPreview, setIsPreview] = useState(false);
 
   useEffect(() => {
     localStorage.setItem(storageKey, JSON.stringify(resumes));
@@ -24,7 +24,11 @@ const App = () => {
     setResumes((prevState) => [...prevState, { id: uniqid(), ...formData }]);
   };
 
-  const next = () => {
+  const togglePreview = (newState) => {
+    setIsPreview(newState);
+  };
+
+  /*const next = () => {
     setStep((prevState) => prevState + 1);
   };
 
@@ -34,31 +38,47 @@ const App = () => {
 
   const resetHandler = () => {
     setStep(1);
-  };
+  };*/
   const lastAddedResume = resumes[resumes.length - 1].basicDetails;
   return (
     <div className={"app"}>
       <Header />
       <Main>
         <Routes>
-          <Route path="/" element={<ResumeThumbnails resumes={resumes} />} />
+          <Route
+            path="/"
+            element={
+              <ResumeThumbnails
+                resumes={resumes}
+                togglePreview={togglePreview}
+              />
+            }
+          />
           <Route
             path="new-resume"
             element={
               <NewResumeForm
                 submitHandler={submitHandler}
-                step={step}
-                next={next}
-                previous={previous}
-                resetHandler={resetHandler}
+                togglePreview={togglePreview}
               />
             }
           />
-          <Route
-            path="preview-resume"
-            element={<Resume resume={lastAddedResume} />}
-          />
-          <Route path="/:resumeId" element={<Resume resume={resumes} />} />
+          {isPreview ? (
+            <Route
+              path={"preview-resume"}
+              element={
+                <Resume
+                  lastAddedResume={lastAddedResume}
+                  isPreview={isPreview}
+                />
+              }
+            />
+          ) : (
+            <Route
+              path="/resumes/:resumeId"
+              element={<Resume resumes={resumes} isPreview={isPreview} />}
+            />
+          )}
         </Routes>
       </Main>
       <Footer />

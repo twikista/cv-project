@@ -46,7 +46,7 @@ const FormFooter = (props) => {
             className={`${styles.submitbtn} ${styles.btn}`}
             onClick={() => {
               handler();
-              navigate("preview-resume");
+              navigate("/preview-resume");
             }}
           >
             Submit

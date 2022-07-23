@@ -6,31 +6,6 @@ import EducationDetailsForm from "./EducationDetailsForm";
 import EmploymentDetailsForm from "./EmploymentDetailsForm";
 
 class NewResumeForm extends Component {
-  initialState = {
-    basicDetails: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-    },
-    education: [
-      {
-        id: uniqid(),
-        school: "",
-        qualification: "",
-        duration: "",
-      },
-    ],
-    experience: [
-      {
-        id: uniqid(),
-        company: "",
-        role: "",
-        period: "",
-      },
-    ],
-  };
-
   state = {
     step: 1,
     basicDetails: {
@@ -111,7 +86,6 @@ class NewResumeForm extends Component {
       ],
       skills: [],
     });
-    this.props.resetHandler();
   };
 
   next = () => {
