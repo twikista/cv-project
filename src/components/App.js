@@ -21,7 +21,10 @@ const App = () => {
   }, [resumes]);
 
   const submitHandler = (formData) => {
-    setResumes((prevState) => [...prevState, { id: uniqid(), ...formData }]);
+    setResumes((prevState) => [
+      ...prevState,
+      { id: uniqid(), time: new Date().getTime(), ...formData },
+    ]);
     togglePreview(true);
     console.log("clicked");
     console.log(resumes);
@@ -85,3 +88,11 @@ const App = () => {
 };
 
 export default App;
+
+/*
+const getPageMargins = () => {
+  return `@page { margin: ${marginTop} ${marginRight} ${marginBottom} ${marginLeft} !important; }`;
+};
+
+<style>{getPageMargins()}</style>
+*/

@@ -31,11 +31,13 @@
 
 .socials_list li{
     cursor: pointer;
+    display: inline-block;
     transition: all 0.2s ease;
 }
 
 .socials_list li:hover{
-    color: #ff8696;
+    color:  rgb(202, 136, 248);
+    transform: scale(1.08);
 }
 
 .legal{

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ResumeThumbnail from "./ResumeThumbnail";
-import { FaRegPlusSquare } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 import styles from "./ResumeThumbnails.module.css";
 
 const ResumeThumbnails = ({ resumes, togglePreview }) => {
@@ -19,7 +19,8 @@ const ResumeThumbnails = ({ resumes, togglePreview }) => {
         className={`${styles.link} ${styles.resume_card}`}
       >
         <button className={styles.new_resume_btn}>
-          <FaRegPlusSquare /> create new resume
+          create new resume
+          <FaPlus />
         </button>
       </Link>
     </div>
