@@ -5,17 +5,7 @@ class EmploymentItem extends Component {
     const { company, period, role } = this.props.data;
     return (
       <tr>
-        <td
-          className="label"
-          // style={{
-          //   width: "30%",
-          //   fontWeight: "600",
-          //   verticalAlign: "top",
-          //   paddingBottom: "5px",
-          // }}
-        >
-          {period}
-        </td>
+        <td className="label">{period}</td>
         <td
           className="info"
           style={{ width: "60%", verticalAlign: "top", paddingBottom: "5px" }}

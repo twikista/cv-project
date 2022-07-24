@@ -1,8 +1,5 @@
 .form{
-    /* width: 85%; */
-    /* margin: 2rem auto; */
-    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
-    /* background-color: #e2daeb; */
+
     border-radius: 0.3rem;
     border:0.2rem solid #1b2945;
     overflow: hidden;
@@ -12,9 +9,3 @@
 
 }
 
-.wrapper{
-    /* border-radius: 0.2rem;  */
-    /* border:0.2rem solid #0e172c; */
-    /* background-color: #0e172c; */
-
-}

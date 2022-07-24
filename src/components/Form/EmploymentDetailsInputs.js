@@ -1,4 +1,3 @@
-import { FaCommentsDollar } from "react-icons/fa";
 import RemoveFormItemBtn from "./RemoveFormItemBtn";
 const EmploymentDetailsInputs = ({
   onChangeHandler,

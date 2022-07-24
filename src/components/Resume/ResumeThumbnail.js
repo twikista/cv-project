@@ -116,12 +116,3 @@ const ResumeThumbnail = ({ resume, togglePreview }) => {
 };
 
 export default ResumeThumbnail;
-{
-  /* <div className={"resume_section"}>
-        <h4>{`${firstName} ${lastName}'s Resume`}</h4>
-      </div> 
-      
-      className={`${styles.thumbnail_container} ${styles.resume_card}`}
-      
-      */
-}

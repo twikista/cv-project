@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import AddFormItemBtn from "./AddFormItemBtn";
-import RemoveFormItemBtn from "./RemoveFormItemBtn";
 
 import EmploymentDetailsInputs from "./EmploymentDetailsInputs";
 import FormContent from "../layout/FormContent";
