@@ -4,8 +4,17 @@
     border:0.2rem solid #1b2945;
     overflow: hidden;
     padding-bottom: 0.5rem;
-    width: 100%;
+    width: 85%;
     max-width: 480px;
+    min-width: 285x;
+    margin: 0 auto;
 
+}
+
+@media(min-width:580px){
+    .form{
+        width: 100%;
+        margin: 0 auto;
+    }
 }
 

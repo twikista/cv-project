@@ -4,7 +4,7 @@
     height: 250px;
     flex: 1 1 calc(50% - 2rem);
     border-radius: 5px;
-    box-shadow: rgba(0,0,0,0.35) 0px 3px 8px;
+    box-shadow: rgba(0,0,0,0.7) 0px 3px 8px;
     overflow: hidden;
     display: inline-block;
     min-width: 180px;

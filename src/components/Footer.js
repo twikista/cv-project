@@ -19,8 +19,8 @@ class Footer extends Component {
           </ul>
         </div>
         <div className={styles.legal}>
-          <span>Coded by Aaron Anama</span>
           <span className="copyright">&copy; 2022 </span>
+          <span>Aaron Anama</span>
         </div>
       </footer>
     );

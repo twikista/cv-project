@@ -1,19 +1,19 @@
 .resume_wrapper{
     width: 90%;
     max-width: 800px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #ffffee;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
+    box-shadow: rgba(0,0,0,0.5) 0px 3px 8px;
     color: #444;
     padding-top: 20px ;
-    
-   
-    /* justify-content: center; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+
 }
 
 

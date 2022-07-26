@@ -4,8 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: inherit;
-    /* margin-bottom: 0.25rem ; */
+    width: 100%;
 }
 
 .heading{
@@ -27,7 +26,7 @@ article:not(:first-child){
 
 
 label{
-    width:100%
+    width:100%;
 }
 
 
@@ -47,7 +46,9 @@ input{
     font-size: 0.9rem;
     font-weight: 500;
     display: inline-block;
+    color: #1b2d45;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 input::placeholder{
@@ -64,11 +65,20 @@ input::placeholder{
 }
 
 input:focus{
-    border:rgb(0, 128, 128, 0.3) solid 2px ;
+    border:rgb(171, 62, 250) solid 2px ;
+    background-color: #f7f7f7;
+    color: #1b2d45;
+    
 }
 
 input:hover{
-    border:rgb(0, 128, 128, 0.3) solid 2px ;
+    border:rgb(171, 62, 250) solid 2px ;
+    
+}
+
+input:hover::placeholder{
+    color:rgb(138, 5, 233);
+
 }
 
 

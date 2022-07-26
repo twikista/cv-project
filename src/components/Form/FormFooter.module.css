@@ -1,16 +1,13 @@
 .formfooter{
-    /* color: #d9d4e7; */
     color: #d9d4e7;
-    /* background-color: #1b2d45; */
-    /* border-top:#1b2d45 solid 2px; */
     font-size: 1rem;
     padding: 0.5rem 1.2rem;
-    width: inherit;
+    width: 100%;
     
 }
 
 nav{
-    width: inherit;
+    width: 100%;
     
 }
 
@@ -40,7 +37,6 @@ nav{
     border-radius: 3px;
     outline: none;
     appearance: none;
-    /* padding: 0.6rem 0.8rem; */
     text-transform: uppercase;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
@@ -54,7 +50,7 @@ nav{
   }
 
   .btn:hover{
-    background-color: #008080;
+    background-color: #9405Fa;;
     
     
   }

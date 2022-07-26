@@ -1,6 +1,6 @@
 .footer{
     width: 100%;
-    padding: 12px 8px 5px 8px;
+    padding: 8px 8px 5px 8px;
     background-color: #0e172c;
     color: #d9d4e7;
     display: flex;
@@ -8,12 +8,13 @@
     justify-content: space-between;
     align-self: center;
     font-size: 0.8rem;
+    row-gap: 5px;
 }
 
 .socials{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     font-size: 1.2rem;
    
 
@@ -27,12 +28,16 @@
     width: 80%;
     max-width: 320px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .socials_list li{
     cursor: pointer;
     display: inline-block;
     transition: all 0.2s ease;
+    margin: 0;
+    padding: 0;
 }
 
 .socials_list li:hover{
@@ -42,8 +47,10 @@
 
 .legal{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
-    margin-top: 5px;
+    justify-content: center;
+    /* margin-top: 5px; */
+    gap: 10px;
 }
 

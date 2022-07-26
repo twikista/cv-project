@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Main from "./Main";
 import NewResumeForm from "./Form/NewResumeForm";
-import Resume from "./Resume";
+import Resume from "./Resume/Resume";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./Footer";
 import uniqid from "uniqid";

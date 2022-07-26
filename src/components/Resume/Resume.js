@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import PersonalDetails from "./Resume/PersonalDetails";
-import EducationList from "./Resume/EducationList";
-import EmploymentList from "./Resume/EmploymentList";
+import PersonalDetails from "./PersonalDetails";
+import EducationList from "./EducationList";
+import EmploymentList from "./EmploymentList";
 import styles from "./Resume.module.css";
 
 const Resume = ({ lastAddedResume, resumes, isPreview }) => {
