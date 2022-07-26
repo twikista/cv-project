@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Footer from "./Footer";
 import uniqid from "uniqid";
 import ResumeThumbnails from "./Resume/ResumeThumbnails";
+import WelcomePage from "./WelcomePage";
 import "./App.css";
 
 const App = () => {
@@ -34,32 +35,24 @@ const App = () => {
     setIsPreview(newState);
   };
 
-  /*const next = () => {
-    setStep((prevState) => prevState + 1);
-  };
-
-  const previous = () => {
-    setStep((prevState) => prevState - 1);
-  };
-
-  const resetHandler = () => {
-    setStep(1);
-  };*/
-  // const lastAddedResume = resumes[resumes.length - 1].basicDetails;
   return (
     <div className={"app"}>
       <Header />
       <Main>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <ResumeThumbnails
-                resumes={resumes}
-                togglePreview={togglePreview}
-              />
-            }
-          />
+          {resumes.length === 0 ? (
+            <Route path="/" element={<WelcomePage />} />
+          ) : (
+            <Route
+              path="/"
+              element={
+                <ResumeThumbnails
+                  resumes={resumes}
+                  togglePreview={togglePreview}
+                />
+              }
+            />
+          )}
           <Route
             path="new-resume"
             element={<NewResumeForm submitHandler={submitHandler} />}

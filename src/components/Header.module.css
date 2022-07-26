@@ -1,7 +1,66 @@
+.flex{
+    display: flex;
+}
+
 .header{
     width: 100%;
     padding: 20px 10px;
     background-color: #0e172c;
+    justify-content: flex-start;
+}
+
+@media(min-width:500px){
+    .header{
+        padding-left:  20px;
+        padding-right:  20px;
+
+    }
+}
+
+.logo_container{
+    align-items: center;
+
+}
+
+
+.logo{
+    border: solid #d9d4e7 3px;
+    border-radius: 2px;
+    background-color:#d9d4e7;
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    margin-right: 3px;
+}
+
+.logo_text{
+    font-size: 12px;
+    font-weight: 700;
+    /* align-self: flex-end; */
+    text-transform: uppercase;
+    display: inline-block;
+    color: #d9d4e7;
+}
+
+.outer{
+    border: solid #0e172c 3px;
+    border-radius: 2px;
+    width: 15px;
+    height: 15px;
+    padding: 2px ;
+    background-color:#0e172c;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.inner{
+    border: solid #d9d4e7 3px;
+    border-radius: 1px;
+    width: 10px;
+    height: 4px;
+    background-color:#d9d4e7;
+
 }
 
 .logoWrapper{
@@ -9,9 +68,3 @@
     text-align: center;
 }
 
-.logo{
-    text-transform: capitalize;
-    color: #d9d4e7;
-    
-
-}

@@ -1,0 +1,158 @@
+
+.home_container{
+    display: flex;
+    width: inherit;
+    height: calc(100vh - 180px);
+    flex-direction: column;
+}
+
+@media(min-width:520px){
+    .home_container{
+        flex-direction: row;
+        
+    }
+}
+
+.right_wrapper{
+    
+    flex: 1;
+    position: relative;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    filter: blur(1px);
+}
+
+.centered{
+    height: 250px;
+    width: 220px;
+    /* background-color: red; */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50%;
+    left: -50%;
+    object-fit:cover;
+   
+}
+
+.right_wrapper img{
+    max-width: 100%;
+    height: auto;
+}
+
+.left_wrapper{
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 12px 0 12px;
+    height: inherit;
+    
+    /* text-align: center; */
+    /* border: solid red 1px; */
+}
+
+.top_left{
+    width: 100%;
+    margin-bottom: 30px;
+    /* height: 50; */
+}
+
+
+.styling_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    font-size: 20px;
+    text-transform: capitalize;
+    color:#223a5a;
+    margin-bottom: 5px;
+    
+}
+
+.tagline{
+    
+    color: #9405Fa;
+    font-size: 13px;
+    text-align: center;
+}
+
+@media(min-width:600px){
+    .heading{
+        font-size: 32px;
+    }
+
+    .tagline{
+        font-size: 14px;
+    }
+}
+
+@media(min-width:880px){
+
+    .styling_div{
+        max-width: 580px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .heading{
+        font-size: 42px;
+    }
+
+    .tagline{
+        font-size: 20px;
+    }
+
+    .top_left{
+        margin-bottom: 50px;
+        /* height: 50; */
+    }
+    
+}
+
+
+
+.cta_btn{
+    border: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #9405Fa;
+    padding: 15px 10px;
+    color: #f7f7f7;
+    font-weight: 600;
+    max-width: fit-content;
+    text-transform: uppercase;
+    border-radius: 5px;
+
+}
+
+.link{
+    text-decoration: none;
+    width: 30%;
+    display: inline-block;
+    min-width: 160px;
+    max-width: 170px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    color: #f7f7f7;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #9405Fa;
+    padding: 15px 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.link:hover{
+    background-color: #6c03b8;
+
+}

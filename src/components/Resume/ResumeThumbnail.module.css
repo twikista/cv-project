@@ -1,10 +1,10 @@
 .resume_card{
-    background-color: #f3e8e8;
+    background-color: #ffffee;
     margin: 2rem 0.5rem;
     height: 250px;
     flex: 1 1 calc(50% - 2rem);
     border-radius: 5px;
-    box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
+    box-shadow: rgba(0,0,0,0.35) 0px 3px 8px;
     overflow: hidden;
     display: inline-block;
     min-width: 180px;
@@ -21,7 +21,7 @@
 
 .resume_card:hover{
     transform: scale(1.03);
-    box-shadow: rgba( 104, 3, 177,0.6) 0px 3px 8px;
+    /* box-shadow: rgba( 104, 3, 177,0.6) 0px 3px 8px; */
 }
 
 .resume_card span{

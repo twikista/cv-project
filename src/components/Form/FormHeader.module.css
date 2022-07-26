@@ -1,16 +1,11 @@
 .heading{
-    /* background-color: #0e172c; */
     border-bottom: solid 2px #1b2945;
-    /* color: #0e172c; */
     display: flex;
     align-items: center;
     justify-content: center;
     padding:1rem 0.5rem ;
     color: #d9d4e7;
-    background-color: #1b2d45;
-    /* margin-bottom: 0.4rem; */
-    /* border-top-left-radius: 0.3rem; */
-    /* border-top-right-radius: 0.3rem; */
+    background-color: #1b2d45; 
 }
 
 .heading svg{

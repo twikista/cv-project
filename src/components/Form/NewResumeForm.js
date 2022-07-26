@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./Form.module.css";
+import styles from "./NewResumeForm.module.css";
 import uniqid from "uniqid";
 import PersonalDetailsForm from "./PersonalDetailsForm";
 import EducationDetailsForm from "./EducationDetailsForm";
