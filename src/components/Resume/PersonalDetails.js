@@ -4,7 +4,6 @@ import styles from "./PersonalDetails.module.css";
 class PersonalDetails extends Component {
   render() {
     const { firstName, lastName, email, phone } = this.props.data;
-    console.log(this.props.data);
     return (
       <article className={styles.personal_details}>
         <table className={styles.details_table}>

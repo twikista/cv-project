@@ -4,12 +4,18 @@ import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const FormFooter = (props) => {
-  const handler = () => {
-    props.submitHandler();
-    props.resetHandler();
-    // props.next();
-  };
   const navigate = useNavigate();
+  const handler = () => {
+    if (props.isEditing) {
+      props.editedResumeSubmitHandler(props.resume.id, props.resume);
+      props.editStateToggler();
+    } else {
+      props.submitHandler();
+      navigate("/preview-resume");
+    }
+    props.resetHandler();
+  };
+
   const { step, next, previous, resetHandler } = props;
   return (
     <div className={styles.formfooter}>
@@ -46,10 +52,9 @@ const FormFooter = (props) => {
             className={`${styles.submitbtn} ${styles.btn}`}
             onClick={() => {
               handler();
-              navigate("/preview-resume");
             }}
           >
-            Submit
+            {props.isEditing ? "Save Changes" : "Generate Resume"}
           </button>
         )}
         <button

@@ -17,6 +17,10 @@
     }
 }
 
+.link{
+    text-decoration: none;
+}
+
 .logo_container{
     align-items: center;
 

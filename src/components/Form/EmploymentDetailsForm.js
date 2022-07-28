@@ -13,7 +13,6 @@ class EmploymentDetailsForm extends Component {
     const data = [...this.props.value];
     data[index][name] = value;
     this.props.handler(e, data);
-    console.log(data);
   };
 
   render() {
@@ -46,6 +45,7 @@ class EmploymentDetailsForm extends Component {
           previous={this.props.previous}
           resetHandler={this.props.resetHandler}
           submitHandler={this.props.submitHandler}
+          {...this.props}
         />
       </>
     );

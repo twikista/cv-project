@@ -35,6 +35,19 @@ const App = () => {
     setIsPreview(newState);
   };
 
+  const editedResumeSubmitHandler = (id, editedResume) => {
+    setResumes((prevState) => {
+      const initialResume = prevState.find((i) => i.id === id);
+      const newResume = {
+        ...initialResume,
+        time: new Date().getTime(),
+        ...editedResume,
+      };
+      const newResumes = prevState.map((i) => (i.id === id ? newResume : i));
+      return newResumes;
+    });
+  };
+
   return (
     <div className={"app"}>
       <Header />
@@ -63,6 +76,7 @@ const App = () => {
               element={
                 <Resume
                   lastAddedResume={resumes[resumes.length - 1]}
+                  editedResumeSubmitHandler={editedResumeSubmitHandler}
                   isPreview={isPreview}
                 />
               }
@@ -70,7 +84,13 @@ const App = () => {
           ) : (
             <Route
               path="/resumes/:resumeId"
-              element={<Resume resumes={resumes} isPreview={isPreview} />}
+              element={
+                <Resume
+                  resumes={resumes}
+                  editedResumeSubmitHandler={editedResumeSubmitHandler}
+                  isPreview={isPreview}
+                />
+              }
             />
           )}
         </Routes>
