@@ -48,6 +48,12 @@ const App = () => {
     });
   };
 
+  const deleteResumeHandler = (id) => {
+    setResumes((prevState) => {
+      return prevState.filter((resume) => id !== resume.id);
+    });
+  };
+
   return (
     <div className={"app"}>
       <Header />
@@ -88,6 +94,7 @@ const App = () => {
                 <Resume
                   resumes={resumes}
                   editedResumeSubmitHandler={editedResumeSubmitHandler}
+                  deleteResumeHandler={deleteResumeHandler}
                   isPreview={isPreview}
                 />
               }
