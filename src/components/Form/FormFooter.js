@@ -2,16 +2,21 @@ import React from "react";
 import styles from "./FormFooter.module.css";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import uniqid from "uniqid";
 
 const FormFooter = (props) => {
+  console.log(props.resume);
   const navigate = useNavigate();
   const handler = () => {
     if (props.isEditing) {
       props.editedResumeSubmitHandler(props.resume.id, props.resume);
       props.editStateToggler();
     } else {
-      props.submitHandler();
-      navigate("/preview-resume");
+      const resume = { id: uniqid(), ...props.resume };
+      props.submitHandler(resume);
+      // navigate("/preview-resume");
+      navigate(`/resumes/${resume.id}`);
+      console.log(resume.id);
     }
     props.resetHandler();
   };

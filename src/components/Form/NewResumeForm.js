@@ -134,7 +134,9 @@ class NewResumeForm extends Component {
           next={this.next}
           previous={this.previous}
           resetHandler={this.resetFormHandler}
-          submitHandler={() => this.props.submitHandler(this.state)}
+          // submitHandler={() => this.props.submitHandler(this.state)}
+          submitHandler={this.props.submitHandler}
+          resume={this.state}
         />
       );
     }

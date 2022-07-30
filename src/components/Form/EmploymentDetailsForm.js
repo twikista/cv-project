@@ -16,6 +16,7 @@ class EmploymentDetailsForm extends Component {
   };
 
   render() {
+    console.log(this.props.resume);
     return (
       <>
         <FormHeader heading="Employment Details">

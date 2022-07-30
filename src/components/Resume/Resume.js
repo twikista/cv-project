@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import PersonalDetails from "./PersonalDetails";
 import EducationList from "./EducationList";
 import EmploymentList from "./EmploymentList";
@@ -27,6 +27,34 @@ const Resume = (
     setIsEditing((prevState) => !prevState);
   };
 
+  // const contentToRender = (
+  //   <section className={styles.resume_render}>
+  //     <div className={styles.resume_wrapper}>
+  //       <div className={styles.resume_content}>
+  //         <PersonalDetails data={clickedResume.basicDetails} />
+  //         <EducationList data={clickedResume.education} />
+  //         <EmploymentList data={clickedResume.experience} />
+  //       </div>
+  //     </div>
+  //     <div className={styles.resume_tools}>
+  //       <Link to="/">back</Link>
+  //       <button className={styles.edit_btn} onClick={editStateToggler}>
+  //         Edit
+  //       </button>
+  //       <button
+  //         className={styles.delete_btn}
+  //         onClick={() => {
+  //           deleteResumeHandler(clickedResume.id);
+  //           navigate("/");
+  //         }}
+  //       >
+  //         delete
+  //       </button>
+  //       <button>download</button>
+  //     </div>
+  //   </section>
+  // );
+
   const contentToRender = isPreview ? (
     <section className={styles.resume_render}>
       <div className={styles.resume_wrapper}>
@@ -50,6 +78,7 @@ const Resume = (
         </div>
       </div>
       <div className={styles.resume_tools}>
+        <Link to="/">back</Link>
         <button className={styles.edit_btn} onClick={editStateToggler}>
           Edit
         </button>
@@ -62,6 +91,7 @@ const Resume = (
         >
           delete
         </button>
+        <button>download</button>
       </div>
     </section>
   );

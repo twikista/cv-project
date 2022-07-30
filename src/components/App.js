@@ -5,7 +5,7 @@ import NewResumeForm from "./Form/NewResumeForm";
 import Resume from "./Resume/Resume";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./Footer";
-import uniqid from "uniqid";
+// import uniqid from "uniqid";
 import ResumeThumbnails from "./Resume/ResumeThumbnails";
 import WelcomePage from "./WelcomePage";
 import "./App.css";
@@ -24,7 +24,7 @@ const App = () => {
   const submitHandler = (formData) => {
     setResumes((prevState) => [
       ...prevState,
-      { id: uniqid(), time: new Date().getTime(), ...formData },
+      { time: new Date().getTime(), ...formData },
     ]);
     togglePreview(true);
     console.log("clicked");
@@ -54,6 +54,8 @@ const App = () => {
     });
   };
 
+  const lastAddedResume = resumes[resumes.length - 1] || null;
+
   return (
     <div className={"app"}>
       <Header />
@@ -76,12 +78,24 @@ const App = () => {
             path="new-resume"
             element={<NewResumeForm submitHandler={submitHandler} />}
           />
+          {/* <Route
+            path="/resumes/:resumeId"
+            element={
+              <Resume
+              lastAddedResume={resumes[resumes.length - 1]}
+                resumes={resumes}
+                editedResumeSubmitHandler={editedResumeSubmitHandler}
+                deleteResumeHandler={deleteResumeHandler}
+                isPreview={isPreview}
+              />
+            }
+          /> */}
           {isPreview ? (
             <Route
-              path={"/preview-resume"}
+              path="/resumes/:resumeId"
               element={
                 <Resume
-                  lastAddedResume={resumes[resumes.length - 1]}
+                  lastAddedResume={lastAddedResume}
                   editedResumeSubmitHandler={editedResumeSubmitHandler}
                   isPreview={isPreview}
                 />
