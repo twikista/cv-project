@@ -8,6 +8,7 @@ import Footer from "./Footer";
 // import uniqid from "uniqid";
 import ResumeThumbnails from "./Resume/ResumeThumbnails";
 import WelcomePage from "./WelcomePage";
+import RenderResume from "./Resume/RenderResume";
 import "./App.css";
 
 const App = () => {
@@ -90,7 +91,20 @@ const App = () => {
               />
             }
           /> */}
-          {isPreview ? (
+          <Route
+            path="/resumes/:resumeId"
+            element={
+              <RenderResume
+                lastAddedResume={lastAddedResume}
+                editedResumeSubmitHandler={editedResumeSubmitHandler}
+                isPreview={isPreview}
+                deleteResumeHandler={deleteResumeHandler}
+                resumes={resumes}
+              />
+            }
+          />
+
+          {/* {isPreview ? (
             <Route
               path="/resumes/:resumeId"
               element={
@@ -113,7 +127,7 @@ const App = () => {
                 />
               }
             />
-          )}
+          )} */}
         </Routes>
       </Main>
       <Footer />

@@ -35,15 +35,24 @@
 .socials_list li{
     cursor: pointer;
     display: inline-block;
-    transition: all 0.2s ease;
     margin: 0;
     padding: 0;
 }
 
-.socials_list li:hover{
+.socials_list li a{
+    display: inline-block;
+    transition: all 0.2s ease;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #d9d4e7;
+}
+
+.socials_list li a:hover{
     color:  rgb(177, 69, 253);
     transform: scale(1.08);
 }
+
 
 .legal{
     display: flex;

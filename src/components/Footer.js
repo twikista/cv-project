@@ -8,13 +8,31 @@ class Footer extends Component {
         <div className={styles.socials}>
           <ul className={styles.socials_list}>
             <li>
-              <FaGithub />
+              <a
+                href="https://github.com/twikista"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <FaGithub />
+              </a>
             </li>
             <li>
-              <FaLinkedin />
+              <a
+                href="https://www.linkedin.com/in/aaronanama"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <FaLinkedin />
+              </a>
             </li>
             <li>
-              <FaTwitter />
+              <a
+                href="https://twitter.com/aaronanama"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <FaTwitter />
+              </a>
             </li>
           </ul>
         </div>
