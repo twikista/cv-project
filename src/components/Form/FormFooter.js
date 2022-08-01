@@ -13,7 +13,6 @@ const FormFooter = (props) => {
     } else {
       const resume = { id: uniqid(), ...props.resume };
       props.submitHandler(resume);
-      // navigate("/preview-resume");
       navigate(`/resumes/${resume.id}`);
       console.log(resume.id);
     }

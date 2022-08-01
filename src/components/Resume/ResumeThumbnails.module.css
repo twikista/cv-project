@@ -10,7 +10,7 @@
 
 @media(min-width:500px){
     .resumes_container{
-        /* flex-direction: row-reverse; */
+        flex-direction: row-reverse
     }
 }
 

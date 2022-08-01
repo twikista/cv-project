@@ -62,10 +62,13 @@
         /* margin-top: 20px; */
         padding: 10px 0px;
         position: initial;
-        border-bottom-right-radius: 40px;
-        border-bottom-left-radius: 40px;
+        /* border-bottom-right-radius: 40px;
+        border-bottom-left-radius: 40px; */
         border-top-left-radius: 0;
         height: auto;
+        position: sticky;
+        top: 87px;
+        border-radius: 40px;
     }
 
     .resume_dashboard button, .link_btn{
