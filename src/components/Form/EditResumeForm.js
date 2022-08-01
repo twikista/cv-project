@@ -20,7 +20,6 @@ class EditResumeForm extends Component {
     const data = { ...this.state };
     data[field] = val;
     this.setState((prevState) => ({ ...prevState, ...data }));
-    console.log(this.state);
   };
 
   addFormItemHandler = (field) => {
@@ -83,7 +82,6 @@ class EditResumeForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { editedResumeSubmitHandler, editStateToggler } = this.props;
     let contentToRender;
     if (step === 1) {
       contentToRender = (
@@ -120,10 +118,12 @@ class EditResumeForm extends Component {
           next={this.next}
           previous={this.previous}
           resetHandler={this.resetFormHandler}
-          editedResumeSubmitHandler={editedResumeSubmitHandler}
-          editStateToggler={editStateToggler}
+          submitHandler={this.props.submitHandler}
           resume={this.state}
-          isEditing={this.props.isEditing}
+          // editedResumeSubmitHandler={editedResumeSubmitHandler}
+          // editStateToggler={editStateToggler}
+          // isEditing={this.props.isEditing}
+          {...this.props}
         />
       );
     }

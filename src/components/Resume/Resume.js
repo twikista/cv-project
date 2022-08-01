@@ -1,63 +1,34 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useParams } from "react-router-dom";
+import ReactToPrint from "react-to-print";
 import PersonalDetails from "./PersonalDetails";
 import EducationList from "./EducationList";
 import EmploymentList from "./EmploymentList";
 import EditResumeForm from "../Form/EditResumeForm";
+import ResumeDashBoard from "./ResumeDashboard";
+import ResumeToDwomload from "./ResumeToDownload";
 import styles from "./Resume.module.css";
+import { FiDownload } from "react-icons/fi";
 
 const Resume = (props) => {
-  const { lastAddedResume, resumes, isPreview, editedResumeSubmitHandler } =
-    props;
+  const {
+    lastAddedResume,
+    resumes,
+    editedResumeSubmitHandler,
+    deleteResumeHandler,
+  } = props;
   const [isEditing, setIsEditing] = useState(false);
   const { resumeId } = useParams();
+  const pdfRef = useRef();
   let clickedResume;
-  if (resumes) clickedResume = resumes.find((i) => i.id === resumeId);
+  resumes
+    ? (clickedResume = resumes.find((i) => i.id === resumeId))
+    : (clickedResume = lastAddedResume);
 
   const editStateToggler = () => {
     setIsEditing((prevState) => !prevState);
   };
-
-  // const contentToRender = (
-  //   <section className={styles.resume_render}>
-  //     <div className={styles.resume_wrapper}>
-  //       <div className={styles.resume_content}>
-  //         <PersonalDetails data={clickedResume.basicDetails} />
-  //         <EducationList data={clickedResume.education} />
-  //         <EmploymentList data={clickedResume.experience} />
-  //       </div>
-  //     </div>
-  //     <div className={styles.resume_tools}>
-  //       <Link to="/">back</Link>
-  //       <button className={styles.edit_btn} onClick={editStateToggler}>
-  //         Edit
-  //       </button>
-  //       <button
-  //         className={styles.delete_btn}
-  //         onClick={() => {
-  //           deleteResumeHandler(clickedResume.id);
-  //           navigate("/");
-  //         }}
-  //       >
-  //         delete
-  //       </button>
-  //       <button>download</button>
-  //     </div>
-  //   </section>
-  // );
-
-  const contentToRender = isPreview ? (
-    <div className={styles.resume_wrapper}>
-      <div className={styles.resume_content}>
-        <PersonalDetails data={lastAddedResume.basicDetails} />
-        <EducationList data={lastAddedResume.education} />
-        <EmploymentList data={lastAddedResume.experience} />
-      </div>
-    </div>
-  ) : (
-    /* <nav className={styles.resume_tools}>
-        <button className={styles.edit_btn}>Edit</button>
-      </nav> */
+  const contentToRender = (
     <div className={styles.resume_wrapper}>
       <div className={styles.resume_content}>
         <PersonalDetails data={clickedResume.basicDetails} />
@@ -65,22 +36,10 @@ const Resume = (props) => {
         <EmploymentList data={clickedResume.experience} />
       </div>
     </div>
-    /* <div className={styles.resume_tools}>
-        <Link to="/">back</Link>
-        <button className={styles.edit_btn} onClick={editStateToggler}>
-          Edit
-        </button>
-        <button
-          className={styles.delete_btn}
-          onClick={() => {
-            deleteResumeHandler(clickedResume.id);
-            navigate("/");
-          }}
-        >
-          delete
-        </button>
-        <button>download</button>
-      </div> */
+  );
+
+  const contentToDownload = (
+    <ResumeToDwomload clickedResume={clickedResume} ref={pdfRef} />
   );
 
   return (
@@ -89,12 +48,29 @@ const Resume = (props) => {
         <EditResumeForm
           editedResumeSubmitHandler={editedResumeSubmitHandler}
           editStateToggler={editStateToggler}
-          clickedResume={isPreview ? lastAddedResume : clickedResume}
+          clickedResume={clickedResume}
           isEditing={isEditing}
           {...props}
         />
       ) : (
-        contentToRender
+        <section className={styles.resume_render}>
+          {contentToRender}
+          <div style={{ display: "none" }}>{contentToDownload}</div>
+          <ResumeDashBoard
+            editStateToggler={editStateToggler}
+            deleteResumeHandler={deleteResumeHandler}
+            clickedResume={clickedResume}
+          >
+            <ReactToPrint
+              trigger={() => (
+                <button>
+                  <FiDownload />
+                </button>
+              )}
+              content={() => pdfRef.current}
+            />
+          </ResumeDashBoard>
+        </section>
       )}
     </>
   );

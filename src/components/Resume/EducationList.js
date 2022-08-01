@@ -4,7 +4,6 @@ import styles from "./EducationList.module.css";
 
 class EducationList extends Component {
   render() {
-    console.log(this.props.data);
     return (
       <article className={styles.education_details}>
         <table className={styles.details_table}>

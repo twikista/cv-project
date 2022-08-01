@@ -1,5 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./ResumeDashboard.module.css";
+import { FiEdit } from "react-icons/fi";
+import { IoMdArrowRoundBack } from "react-icons/io";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 const ResumeDashBoard = ({
   children,
@@ -9,19 +12,21 @@ const ResumeDashBoard = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <nav className={styles.resume_tools}>
-      <Link to="/">back</Link>
-      <button className={styles.edit_btn} onClick={editStateToggler}>
-        Edit
+    <nav className={styles.resume_dashboard}>
+      <Link to="/" className={styles.link_btn}>
+        <IoMdArrowRoundBack />
+      </Link>
+      <button className={styles.dashboard_btn} onClick={editStateToggler}>
+        <FiEdit />
       </button>
       <button
-        className={styles.delete_btn}
+        className={styles.dashboard_btn}
         onClick={() => {
           deleteResumeHandler(clickedResume.id);
           navigate("/");
         }}
       >
-        delete
+        <RiDeleteBin6Line />
       </button>
       {children}
     </nav>

@@ -5,10 +5,8 @@ import NewResumeForm from "./Form/NewResumeForm";
 import Resume from "./Resume/Resume";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./Footer";
-// import uniqid from "uniqid";
 import ResumeThumbnails from "./Resume/ResumeThumbnails";
 import WelcomePage from "./WelcomePage";
-import RenderResume from "./Resume/RenderResume";
 import "./App.css";
 
 const App = () => {
@@ -79,38 +77,14 @@ const App = () => {
             path="new-resume"
             element={<NewResumeForm submitHandler={submitHandler} />}
           />
-          {/* <Route
-            path="/resumes/:resumeId"
-            element={
-              <Resume
-              lastAddedResume={resumes[resumes.length - 1]}
-                resumes={resumes}
-                editedResumeSubmitHandler={editedResumeSubmitHandler}
-                deleteResumeHandler={deleteResumeHandler}
-                isPreview={isPreview}
-              />
-            }
-          /> */}
-          <Route
-            path="/resumes/:resumeId"
-            element={
-              <RenderResume
-                lastAddedResume={lastAddedResume}
-                editedResumeSubmitHandler={editedResumeSubmitHandler}
-                isPreview={isPreview}
-                deleteResumeHandler={deleteResumeHandler}
-                resumes={resumes}
-              />
-            }
-          />
-
-          {/* {isPreview ? (
+          {isPreview ? (
             <Route
               path="/resumes/:resumeId"
               element={
                 <Resume
                   lastAddedResume={lastAddedResume}
                   editedResumeSubmitHandler={editedResumeSubmitHandler}
+                  deleteResumeHandler={deleteResumeHandler}
                   isPreview={isPreview}
                 />
               }
@@ -127,7 +101,7 @@ const App = () => {
                 />
               }
             />
-          )} */}
+          )}
         </Routes>
       </Main>
       <Footer />

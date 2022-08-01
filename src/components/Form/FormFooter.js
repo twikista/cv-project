@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import uniqid from "uniqid";
 
 const FormFooter = (props) => {
-  console.log(props.resume);
   const navigate = useNavigate();
   const handler = () => {
     if (props.isEditing) {
