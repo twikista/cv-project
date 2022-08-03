@@ -6,7 +6,7 @@ import EducationList from "./EducationList";
 import EmploymentList from "./EmploymentList";
 import EditResumeForm from "../Form/EditResumeForm";
 import ResumeDashBoard from "./ResumeDashboard";
-import ResumeToDwomload from "./ResumeToDownload";
+import ResumeToDownload from "./ResumeToDownload";
 import styles from "./Resume.module.css";
 import { FiDownload } from "react-icons/fi";
 
@@ -39,7 +39,7 @@ const Resume = (props) => {
   );
 
   const contentToDownload = (
-    <ResumeToDwomload clickedResume={clickedResume} ref={pdfRef} />
+    <ResumeToDownload clickedResume={clickedResume} ref={pdfRef} />
   );
 
   return (

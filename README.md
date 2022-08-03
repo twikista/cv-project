@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Smartcv Builder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Smartcv builder is a free online app that enable users to build cv/resume, with a download functionality.
 
-## Available Scripts
+## App URL
 
-In the project directory, you can run:
+[Live Demo](https://smartcvbuilder.netlify.app/)
 
-### `npm start`
+## Table of contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Features](#features)
+- [Motivation](#motivation)
+- [Tecnology used](#technology-used)
+- [Tools](#tools)
+- [Key concepts applied](#key-concepts-applied)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Acknowledgment](#acknowledgement)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Free forever
+- Create and manage multiple cvs
+- preview and download cv
+- simple and elegant design
+- fast & reliable
+- responsive
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Upcoming Features
 
-### `npm run build`
+- add job description
+- add skills
+- more cv templates
+- dark theme
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Motivation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Personal project to enhance my React.Js skills
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technology Used
 
-### `npm run eject`
+- Javascript
+- React
+- React Router
+- CSS Module
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 3rd Party Packages
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- uniqid
+- react-to-print
+- react-icons
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Tools
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- create-react-app
+- git & github
 
-## Learn More
+## Key Concepts Applied
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- react class component
+- react functional component
+- state management
+- conditional rendering with ternary operator and short circuiting
+- ES6 Modules
+- controlled input
+- children props
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Setup
 
-### Code Splitting
+To run this application locally:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone this repo
 
-### Analyzing the Bundle Size
+```bash
+$ git clone https://github.com/twikista/cv-project.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Go the root of the cloned repo and install dependencies
 
-### Making a Progressive Web App
+```bash
+$ cd cv-project && npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Usage
 
-### Advanced Configuration
+To start the application, run ` npm start` to start the development server at http://localhost:3000/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Acknowledgement
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [google fonts](https://fonts.google.com)
+- [the odin project](https://www.theodinproject.com/)

@@ -21,7 +21,6 @@
 
 .resume_card:hover{
     transform: scale(1.03);
-    /* box-shadow: rgba( 104, 3, 177,0.6) 0px 3px 8px; */
 }
 
 .resume_card span{

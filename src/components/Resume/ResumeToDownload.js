@@ -4,7 +4,7 @@ import EducationList from "./EducationList";
 import EmploymentList from "./EmploymentList";
 import styles from "./ResumeToDownload.module.css";
 
-const ResumeToDwomload = forwardRef((props, ref) => {
+const ResumeToDownload = forwardRef((props, ref) => {
   const { clickedResume } = props;
   const contentToDownload = (
     <div className={styles.resume_wrapper} ref={ref}>
@@ -18,4 +18,4 @@ const ResumeToDwomload = forwardRef((props, ref) => {
 
   return contentToDownload;
 });
-export default ResumeToDwomload;
+export default ResumeToDownload;
