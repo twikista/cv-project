@@ -7,6 +7,14 @@ import FormContent from "../layout/FormContent";
 import { TbSchool } from "react-icons/tb";
 
 class EducationDetailsForm extends Component {
+  state = {
+    active: 0,
+  };
+
+  activeItemToggler = (index) => {
+    this.setState({ active: index });
+  };
+
   onChangeHandler = (index) => (e, val) => {
     const { name, value } = e.target;
     const data = [...this.props.value];
@@ -15,7 +23,14 @@ class EducationDetailsForm extends Component {
   };
   render() {
     return (
-      <>
+      <div
+        style={{
+          minHeight: "454px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+        }}
+      >
         <FormHeader heading="Education Details">
           <TbSchool />
         </FormHeader>
@@ -29,12 +44,15 @@ class EducationDetailsForm extends Component {
               onChangeHandler={this.onChangeHandler}
               removeFormItemHandler={this.props.removeFormItemHandler}
               field="education"
+              active={this.state.active === index}
+              activeItemToggler={this.activeItemToggler}
             />
           ))}
           <AddFormItemBtn
             value={this.props.value}
             addFormItemHandler={this.props.addFormItemHandler}
             text="Add Education Details"
+            activeItemToggler={this.activeItemToggler}
           />
         </FormContent>
         <FormFooter
@@ -43,7 +61,7 @@ class EducationDetailsForm extends Component {
           previous={this.props.previous}
           resetHandler={this.props.resetHandler}
         />
-      </>
+      </div>
     );
   }
 }

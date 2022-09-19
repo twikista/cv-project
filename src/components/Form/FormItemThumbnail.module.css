@@ -1,0 +1,20 @@
+.thumbnail_wrapper{
+    color: #1b2d45;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+svg{
+    font-size: 24px;
+    font-weight: 200; 
+}
+
+svg:hover{
+    transform: translateY(2px);
+}
+
+.toggle_btn:hover{
+    color:#6c03b8;
+}

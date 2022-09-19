@@ -8,6 +8,17 @@ import FormFooter from "./FormFooter";
 import { MdOutlineWorkOutline } from "react-icons/md";
 
 class EmploymentDetailsForm extends Component {
+  state = {
+    active: 0,
+  };
+
+  activeItemToggler = (index) => {
+    // if (index === this.state.active) {
+    //   return this.setState({ active: "0" });
+    // }
+    this.setState({ active: index });
+  };
+
   onChangeHandler = (index) => (e, val) => {
     const { name, value } = e.target;
     const data = [...this.props.value];
@@ -16,8 +27,9 @@ class EmploymentDetailsForm extends Component {
   };
 
   render() {
+    console.log(this.props.value);
     return (
-      <>
+      <div>
         <FormHeader heading="Employment Details">
           <MdOutlineWorkOutline />
         </FormHeader>
@@ -31,12 +43,15 @@ class EmploymentDetailsForm extends Component {
               onChangeHandler={this.onChangeHandler}
               removeFormItemHandler={this.props.removeFormItemHandler}
               field="experience"
+              active={this.state.active === index}
+              activeItemToggler={this.activeItemToggler}
             />
           ))}
           <AddFormItemBtn
             value={this.props.value}
             addFormItemHandler={this.props.addFormItemHandler}
             text="Add Employment Details"
+            activeItemToggler={this.activeItemToggler}
           />
         </FormContent>
         <FormFooter
@@ -47,7 +62,7 @@ class EmploymentDetailsForm extends Component {
           submitHandler={this.props.submitHandler}
           {...this.props}
         />
-      </>
+      </div>
     );
   }
 }

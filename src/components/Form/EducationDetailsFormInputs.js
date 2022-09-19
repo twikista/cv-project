@@ -1,4 +1,6 @@
+import React, { useRef } from "react";
 import RemoveFormItemBtn from "./RemoveFormItemBtn";
+import FormItemThumbnail from "./FormItemThumbnail";
 import styles from "./EducationDetailsFormInputs.module.css";
 const EducationDeatilsFormInputs = ({
   onChangeHandler,
@@ -7,45 +9,64 @@ const EducationDeatilsFormInputs = ({
   item,
   field,
   removeFormItemHandler,
+  active,
+  activeItemToggler,
 }) => {
   const { school, qualification, duration } = item;
+  const inputsWrapperRef = useRef();
 
   return (
     <article className={styles.form_fields}>
-      <RemoveFormItemBtn
-        value={value}
-        removeFormItemHandler={removeFormItemHandler}
-        item={item}
-        field={field}
-      />
-      <div className="inputs">
-        <label htmlFor="school" style={{ display: "block" }} />
-        <input
-          type="text"
-          id="school"
-          name="school"
-          value={school}
-          onChange={onChangeHandler(index)}
-          placeholder="Name of Institution"
+      {active || (
+        <FormItemThumbnail
+          val={value[index].school}
+          activeItemToggler={activeItemToggler}
+          index={index}
         />
-        <label htmlFor="qualification" style={{ display: "block" }} />
-        <input
-          type="text"
-          id="qualification"
-          name="qualification"
-          value={qualification}
-          onChange={onChangeHandler(index)}
-          placeholder="Qualification"
+      )}
+      <div
+        className={styles.inputs_wrapper}
+        ref={inputsWrapperRef}
+        style={
+          active ? { height: inputsWrapperRef.scrollHeight } : { height: "0" }
+        }
+      >
+        <RemoveFormItemBtn
+          value={value}
+          removeFormItemHandler={removeFormItemHandler}
+          item={item}
+          field={field}
+          activeItemToggler={activeItemToggler}
         />
-        <label htmlFor="duration" style={{ display: "block" }} />
-        <input
-          type="text"
-          id="duration"
-          name="duration"
-          value={duration}
-          onChange={onChangeHandler(index)}
-          placeholder="Duration"
-        />
+        <div className="inputs">
+          <label htmlFor="school" style={{ display: "block" }} />
+          <input
+            type="text"
+            id="school"
+            name="school"
+            value={school}
+            onChange={onChangeHandler(index)}
+            placeholder="Name of Institution"
+          />
+          <label htmlFor="qualification" style={{ display: "block" }} />
+          <input
+            type="text"
+            id="qualification"
+            name="qualification"
+            value={qualification}
+            onChange={onChangeHandler(index)}
+            placeholder="Qualification"
+          />
+          <label htmlFor="duration" style={{ display: "block" }} />
+          <input
+            type="text"
+            id="duration"
+            name="duration"
+            value={duration}
+            onChange={onChangeHandler(index)}
+            placeholder="Duration"
+          />
+        </div>
       </div>
     </article>
   );

@@ -140,6 +140,7 @@ class NewResumeForm extends Component {
         />
       );
     }
+    // console.log(this.state);
 
     return <div className={styles.form}>{contentToRender}</div>;
   }
