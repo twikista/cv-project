@@ -6,11 +6,13 @@
     width: 100%;
     max-height: 300px;
     overflow-y: auto;
+    
 
 }
 .basicDetails::-webkit-scrollbar {
     width: 2vw;
     max-width: 0px;
+    padding: 0 2px;
   }
 
 .basicDetails:hover::-webkit-scrollbar {
@@ -21,6 +23,12 @@
     background-color: transparent;
     border: 1px solid rgb(29, 31, 34, 0.2);
     border-radius: 8px;
+  }
+
+  .basicDetails::-webkit-scrollbar-thumb {
+    background: rgb(27, 45, 69, 0.9);
+    border-radius: 8px;
+    box-shadow: inset 1px 1px 5px rgba(96, 96, 97, 0.4);
   }
 
 .heading{

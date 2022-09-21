@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./RemoveFormItemBtn.module.css";
 import { FaTimesCircle } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 const RemoveFormItemBtn = ({
   value,
@@ -21,15 +22,10 @@ const RemoveFormItemBtn = ({
           <button
             className={styles.removebtn}
             onClick={() => {
-              // this.props.activeItemToggler(
-              //   this.props.value.length > 0 ? this.props.value.length - 1 : 0
-              // );
-
               removeFormItemHandler(item.id, `${field}`);
             }}
           >
-            <FaTimesCircle size="1rem" style={{ marginRight: "0.3rem" }} />{" "}
-            Remove
+            <MdDelete size="1rem" style={{ marginRight: "0.3rem" }} /> Remove
           </button>
         </div>
       )}

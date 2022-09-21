@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 5px;
+    
 }
 
 .period_heading{
@@ -16,12 +17,14 @@ select{
     border-radius: 2px;
     cursor: pointer;
     width: 70px;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 
 option{
     background-color: #f7f7f7;
     font-size: 16px;
+    font-family: 'Noto Sans', sans-serif;
     
 }
 
@@ -41,7 +44,6 @@ select:invalid{
 select:invalid:hover{
     background-color: #f5ebfc;
     color: #6c03b8;
-    /* border: #6c03b8 solid 2px; */
 }
 
 @media(min-width:480px) {
@@ -50,12 +52,8 @@ select:invalid:hover{
         column-gap: 5px;
     }
 
-    select{
-        /* padding: 3px 5px; */
-        /* width: 70px */
-    }
     select:invalid{
-        font-size: 14px;
+        font-size: 12px;
         letter-spacing: 0;
     }
     

@@ -1,17 +1,17 @@
 .thumbnail_wrapper{
-    color: #1b2d45;
+    color: rgb(27, 45, 69);
     font-size: 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-svg{
+.thumbnail_wrapper svg{
     font-size: 18px;
     font-weight: 200; 
 }
 
-svg:hover{
+.thumbnail_wrapper svg:hover{
     transform: translateY(2px);
 }
 
