@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 import RemoveFormItemBtn from "./RemoveFormItemBtn";
 import FormItemThumbnail from "./FormItemThumbnail";
+import Period from "./Period";
 import styles from "./EmploymentDetailsFormInputs.module.css";
+
 const EmploymentDetailsInputs = ({
   onChangeHandler,
   value,
@@ -12,7 +14,8 @@ const EmploymentDetailsInputs = ({
   active,
   activeItemToggler,
 }) => {
-  const { company, role, period } = item;
+  const { company, role, city, startMonth, startYear, endMonth, endYear } =
+    item;
   console.log(active, index);
   const inputsWrapperRef = useRef();
 
@@ -59,15 +62,33 @@ const EmploymentDetailsInputs = ({
             onChange={onChangeHandler(index)}
             placeholder="Role"
           />
-          <label htmlFor="period" style={{ display: "block" }} />
+          <label htmlFor="city" style={{ display: "block" }} />
           <input
             type="text"
-            id="period"
-            name="period"
-            value={period}
+            id="city"
+            name="city"
+            value={city}
             onChange={onChangeHandler(index)}
-            placeholder="Period"
+            placeholder="City"
           />
+          <div className={styles.period_wrapper}>
+            <Period
+              heading="start date"
+              onChangeHandler={onChangeHandler}
+              index={index}
+              isStart={true}
+              periodMonth={startMonth}
+              periodYear={startYear}
+            />
+            <Period
+              heading="end date"
+              onChangeHandler={onChangeHandler}
+              index={index}
+              isStart={false}
+              periodMonth={endMonth}
+              periodYear={endYear}
+            />
+          </div>
         </div>
       </div>
     </article>

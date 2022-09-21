@@ -8,6 +8,20 @@
     overflow-y: auto;
 
 }
+.basicDetails::-webkit-scrollbar {
+    width: 2vw;
+    max-width: 0px;
+  }
+
+.basicDetails:hover::-webkit-scrollbar {
+    max-width: 8px;
+  }
+
+.basicDetails::-webkit-scrollbar-track {
+    background-color: transparent;
+    border: 1px solid rgb(29, 31, 34, 0.2);
+    border-radius: 8px;
+  }
 
 .heading{
     background-color: #0e172c;
@@ -45,8 +59,9 @@ input{
     width: 100%;
     display: inline-block;
     padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.87rem;
+    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
     display: inline-block;
     color: #1b2d45;
     cursor: pointer;
@@ -55,16 +70,12 @@ input{
 
 input::placeholder{
     color: #1b2d45;
-    font-size: 0.7rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
 }
 
-@media(min-width:480px){
-    
-    input::placeholder{
-        font-size: 0.8rem;
-    }
-}
+
 
 input:focus{
     border:rgb(171, 62, 250) solid 2px ;
@@ -81,6 +92,17 @@ input:hover{
 input:hover::placeholder{
     color:rgb(138, 5, 233);
 
+}
+
+@media(min-width:480px){
+
+    input{
+        font-size: 1rem;
+    }
+    
+    input::placeholder{
+        font-size: 1rem;
+    }
 }
 
 

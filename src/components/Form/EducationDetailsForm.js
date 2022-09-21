@@ -22,6 +22,7 @@ class EducationDetailsForm extends Component {
     this.props.handler(e, data);
   };
   render() {
+    console.log(this.props.value);
     return (
       <div
         style={{

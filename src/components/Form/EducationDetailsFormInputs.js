@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import RemoveFormItemBtn from "./RemoveFormItemBtn";
 import FormItemThumbnail from "./FormItemThumbnail";
 import styles from "./EducationDetailsFormInputs.module.css";
+import Period from "./Period";
 const EducationDeatilsFormInputs = ({
   onChangeHandler,
   value,
@@ -12,7 +13,15 @@ const EducationDeatilsFormInputs = ({
   active,
   activeItemToggler,
 }) => {
-  const { school, qualification, duration } = item;
+  const {
+    school,
+    qualification,
+    city,
+    startMonth,
+    startYear,
+    endMonth,
+    endYear,
+  } = item;
   const inputsWrapperRef = useRef();
 
   return (
@@ -48,6 +57,15 @@ const EducationDeatilsFormInputs = ({
             onChange={onChangeHandler(index)}
             placeholder="Name of Institution"
           />
+          <label htmlFor="city" style={{ display: "block" }} />
+          <input
+            type="text"
+            id="city"
+            name="city"
+            value={city}
+            onChange={onChangeHandler(index)}
+            placeholder="City"
+          />
           <label htmlFor="qualification" style={{ display: "block" }} />
           <input
             type="text"
@@ -57,15 +75,25 @@ const EducationDeatilsFormInputs = ({
             onChange={onChangeHandler(index)}
             placeholder="Qualification"
           />
-          <label htmlFor="duration" style={{ display: "block" }} />
-          <input
-            type="text"
-            id="duration"
-            name="duration"
-            value={duration}
-            onChange={onChangeHandler(index)}
-            placeholder="Duration"
-          />
+
+          <div className={styles.period_wrapper}>
+            <Period
+              heading="start date"
+              onChangeHandler={onChangeHandler}
+              index={index}
+              isStart={true}
+              periodMonth={startMonth}
+              periodYear={startYear}
+            />
+            <Period
+              heading="end date"
+              onChangeHandler={onChangeHandler}
+              index={index}
+              isStart={false}
+              periodMonth={endMonth}
+              periodYear={endYear}
+            />
+          </div>
         </div>
       </div>
     </article>
